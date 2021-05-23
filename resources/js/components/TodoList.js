@@ -1,27 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import TodoItem from './TodoItem';
 import styled from 'styled-components';
+import { fetchTodoList } from '../api';
 
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
-
     .item {
-        margin-right: 10px;
+        margin-left: 60px;
+        margin-bottom: 20px;
     }
 `;
 
 const TodoList = () => {
-    const len = [1,2,3];
+    const [lists, setLists] = useState([]);
+    const [created, setCreated] = useState(true);
+
+    useEffect(() => {
+        if (created) {
+            setCreated(false);
+            fetchTodoList().then(resp => {
+                if (resp.data.success) {
+                    setLists(resp.data.data);
+                }
+            });
+        }
+    }, [created]);
+
     return <Container>
         {
-            len.map(() => {
-                return (
-                    <div className="item">
-                        <TodoItem className="item"/>    
-                    </div>
-                )
-            })   
+            <>
+                <div className="item">
+                    <TodoItem className="item" type="create" setCreated={setCreated}/>    
+                </div>
+
+                {
+                    lists.map((item, index) => {
+                        return (
+                            <div className="item" key={item.id}>
+                                <TodoItem className="item" content={item} type="show" setCreated={setCreated}/>    
+                            </div>
+                        )
+                    })
+                }
+            </>
         }
     </Container>;
 }
