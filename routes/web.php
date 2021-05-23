@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/fetchTodoList', [App\Http\Controllers\TodoListController::class, 'fetchTodoList']);
+Route::post('/createTodoList', [App\Http\Controllers\TodoListController::class, 'createTodoList']);
 
 Auth::routes();
 
