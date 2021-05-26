@@ -34,7 +34,8 @@ class TodoListController extends Controller
                 $data['data'][] = [
                     "id" => $list->id,
                     "title" => $list->title,
-                    "items" => $list->items
+                    "items" => $list->items,
+                    "created_at" => date("Y/m/d", strtotime($list->created_at))
                 ];
             }
         } catch (Exception $e) {
