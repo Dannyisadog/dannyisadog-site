@@ -76,4 +76,58 @@ class TodoListController extends Controller
 
         echo json_encode($data);
     }
+
+    public function updateTodoItem(Request $request)
+    {   
+        $data = [
+            'success' => true
+        ];
+
+        try {
+            $user = Auth::user();
+
+            if (!$user) {
+                throw new Exception("尚未登入");
+            }
+
+            $list_id = $request->input('list_id');
+            $item_id = $request->input('item_id');
+            $finished = $request->input('finished');
+
+            if (!is_bool($finished)) {
+                throw new Exception("資料錯誤");
+            }
+
+            $list = TodoList::find($list_id);
+
+            if (!$list) {
+                throw new Exception("todo list 不存在");
+            }
+
+            if ($list->user_id != $user->id) {
+                throw new Exception("todo list 不存在");
+            }
+
+            $item = TodoItem::find($item_id);
+
+            if ($item->list_id != $list->id) {
+                throw new Exception("todo item 不存在");
+            }
+
+            if ($finished) {
+                $item->update([
+                    'finished_at' => date('Y-m-d H:i:s')
+                ]);
+            } else {
+                $item->update([
+                    'finished_at' => null
+                ]);
+            }
+
+        } catch (Exception $e) {
+            $data['success'] = false;
+        }
+
+        echo json_encode($data);
+    }
 }
