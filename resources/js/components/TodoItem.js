@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { createTodoList } from '../api';
 import $ from 'jquery';
@@ -56,6 +56,21 @@ const Container = styled.div`
         border: 1px solid white;
         color: white;
     }
+
+    .create-item-button {
+        width: 100%;
+        height: 30px;
+        border: 1px dotted #d3d3d3;
+        border-radius: 4px;
+        transition: .3s;
+        background: white;
+        color: #cecece;
+    }
+
+    .create-item-button:hover {
+        background: #ffbe81;
+        color: white;
+    }
 `;
 
 const TitleCreateInput = styled.input`
@@ -73,27 +88,44 @@ const ItemCreateInput = styled.input`
     margin-bottom: 10px;
 `;
 
-const handleCreate = (setCreated) => {
-    const title = $("#title-input").val();
-    const items = $(".item-input").map((index, item) => {
-        return $(item).val();
-    }).toArray();
-
-    createTodoList({
-        title: title,
-        items: items
-    }).then(resp => {
-        if (resp.data.success) {
-            setCreated(true);
-            $("#title-input").val("");
-            $(".item-input").val("");
-        }
-    }).catch((error) => {
-        alert("新增失敗");
-    });
-}
-
 const TodoItem = ({type, content, setCreated}) => {
+
+    const [newItemCount, setNewItemCount] = useState(2);
+
+    let newItemList = [];
+
+    for (let i = 0; i < newItemCount; i++) {
+        newItemList.push(
+            <ItemCreateInput
+                className="item-input"
+                type="text"
+                placeholder="待辦事項"
+                key={i}
+            />   
+        );
+    }
+
+    const handleCreate = (setCreated) => {
+        const title = $("#title-input").val();
+        const items = $(".item-input").map((index, item) => {
+            return $(item).val();
+        }).toArray();
+    
+        createTodoList({
+            title: title,
+            items: items
+        }).then(resp => {
+            if (resp.data.success) {
+                setNewItemCount(2);
+                setCreated(true);
+                $("#title-input").val("");
+                $(".item-input").val("");
+            }
+        }).catch((error) => {
+            alert("新增失敗");
+        });
+    }
+
     return (
         <Container>
             {
@@ -115,9 +147,8 @@ const TodoItem = ({type, content, setCreated}) => {
                         <TitleCreateInput id="title-input" type="text" placeholder="請輸入標題"/>
                     </div>
                     <div className="content-input">
-                        <ItemCreateInput className="item-input" type="text" placeholder="待辦事項"/>
-                        <ItemCreateInput className="item-input" type="text" placeholder="待辦事項"/>
-                        <ItemCreateInput className="item-input" type="text" placeholder="待辦事項"/>
+                        {newItemList}
+                        <button className="create-item-button" onClick={()=>setNewItemCount(newItemCount+ 1)}>新增代辦事項</button>
                     </div>
                     <div className="create-button-container">
                         <button className="create-button" onClick={()=>handleCreate(setCreated)}>新增</button>
