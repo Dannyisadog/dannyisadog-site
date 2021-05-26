@@ -3,6 +3,11 @@ import $ from 'jquery';
 
 const token = $('meta[name="csrf-token"]').attr('content');
 
+const headers = {
+    'Content-Type': 'application/json',
+    'X-CSRF-TOKEN': token
+};
+
 export const fetchTodoList = () => {
    return new Promise((resolve, reject) => {
        axios.get('/fetchTodoList').then(resp => {
@@ -14,12 +19,24 @@ export const fetchTodoList = () => {
 }
 
 export const createTodoList = (data) => {
-    const headers = {
-        'Content-Type': 'application/json',
-        'X-CSRF-TOKEN': token
-    };
     return new Promise((resolve, reject) => {
         axios.post('/createTodoList', data, {
+            headers: headers
+        }).then(resp => {
+            if (resp.data.success) {
+                return resolve(resp);
+            } else {
+                return reject("create todo list error");
+            }
+        }).catch(() => {
+            reject("create todo list error");
+        });
+    });
+}
+
+export const updateTodoItem = (data) => {
+    return new Promise((resolve, reject) => {
+        axios.post('/updateTodoItem', data, {
             headers: headers
         }).then(resp => {
             if (resp.data.success) {
