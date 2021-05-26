@@ -5,7 +5,7 @@ import $ from 'jquery';
 
 const Container = styled.div`
     width: 200px;
-    height: 250px;
+    height: 280px;
     border:1px solid #e9e9e9;
     border-radius: 8px;
     background: white;
@@ -13,7 +13,7 @@ const Container = styled.div`
     color: #333;
     
     .title {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
     }
 
@@ -27,7 +27,7 @@ const Container = styled.div`
     }
 
     .content {
-        height: 180px;
+        height: 215px;
         overflow-y: scroll;
         padding-top: 10px;
 
@@ -101,6 +101,17 @@ const ListItem = styled.div`
     }
 `;
 
+const CreateItemWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+`;
+
+const CheckboxInput = styled.input`
+    cursor: pointer;
+`;
+
 const TodoItem = ({type, content, setCreated}) => {
     const [newItemCount, setNewItemCount] = useState(2);
 
@@ -166,15 +177,15 @@ const TodoItem = ({type, content, setCreated}) => {
             {
                 type == 'show' ?
                 <>
-                    <div className="title">{content.title}</div>
+                    <div className="title">{content.title} ({content.created_at})</div>
                     <div className="content">
                         {
-                            content.items.map((item, index) => {
+                            content.items.map((item) => {
                                 return (
                                     <ListItem className="list-item" key={item.id} finished={item.finished_at}>
                                         <div className="item-content">{item.title}</div>
                                         <div className="checkbox">
-                                            <input type="checkbox" checked={item.finished_at} onClick={(e)=>updateItem(item.list_id, item.id, e.target.checked)}/>
+                                            <CheckboxInput type="checkbox" checked={item.finished_at ? true : false} onClick={(e)=>updateItem(item.list_id, item.id, e.target.checked)}/>
                                         </div>
                                     </ListItem>
                                 );        
@@ -182,7 +193,7 @@ const TodoItem = ({type, content, setCreated}) => {
                         }
                     </div>
                 </> :
-                <>
+                <CreateItemWrapper>
                     <div className="title-input">
                         <TitleCreateInput id="title-input" type="text" placeholder="請輸入標題"/>
                     </div>
@@ -193,7 +204,7 @@ const TodoItem = ({type, content, setCreated}) => {
                     <div className="create-button-container">
                         <button className="create-button" onClick={()=>handleCreate(setCreated)}>新增</button>
                     </div>
-                </>
+                </CreateItemWrapper>
             }
         </Container>
     )
