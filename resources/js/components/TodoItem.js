@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { createTodoList } from '../api';
+import { createTodoList, updateTodoItem } from '../api';
 import $ from 'jquery';
 
 const Container = styled.div`
@@ -33,6 +33,12 @@ const Container = styled.div`
 
         .list-item {
             margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            .item-content {
+                word-wrap: break-word;
+                width: 90%;
+            }
         }
     }
 
@@ -88,8 +94,14 @@ const ItemCreateInput = styled.input`
     margin-bottom: 10px;
 `;
 
-const TodoItem = ({type, content, setCreated}) => {
+const ListItem = styled.div`
+    .item-content {
+        text-decoration: ${(props)=> props.finished ? "line-through" : "none"};
+        color: ${(props)=> props.finished ? "#cecece" : "#333"};
+    }
+`;
 
+const TodoItem = ({type, content, setCreated}) => {
     const [newItemCount, setNewItemCount] = useState(2);
 
     let newItemList = [];
@@ -108,8 +120,18 @@ const TodoItem = ({type, content, setCreated}) => {
     const handleCreate = (setCreated) => {
         const title = $("#title-input").val();
         const items = $(".item-input").map((index, item) => {
-            return $(item).val();
+            return $(item).val() ? $(item).val() : null;
         }).toArray();
+
+        if (!title) {
+            alert("請輸入標題");
+            return;
+        }
+
+        if (items.length == 0) {
+            alert("請至少輸入一個代辦事項");
+            return;
+        }
     
         createTodoList({
             title: title,
@@ -126,6 +148,19 @@ const TodoItem = ({type, content, setCreated}) => {
         });
     }
 
+    const updateItem = (list_id, item_id, finished) => {
+        updateTodoItem({
+            list_id: list_id,
+            item_id: item_id,
+            finished: finished
+        }).then(resp => {
+            setCreated(true);
+        }).catch(() => {
+
+        });
+    }
+
+
     return (
         <Container>
             {
@@ -136,7 +171,12 @@ const TodoItem = ({type, content, setCreated}) => {
                         {
                             content.items.map((item, index) => {
                                 return (
-                                    <div className="list-item" key={item.id}>{item.title}</div>
+                                    <ListItem className="list-item" key={item.id} finished={item.finished_at}>
+                                        <div className="item-content">{item.title}</div>
+                                        <div className="checkbox">
+                                            <input type="checkbox" checked={item.finished_at} onClick={(e)=>updateItem(item.list_id, item.id, e.target.checked)}/>
+                                        </div>
+                                    </ListItem>
                                 );        
                             })
                         }
