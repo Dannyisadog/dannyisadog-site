@@ -49,3 +49,19 @@ export const updateTodoItem = (data) => {
         });
     });
 }
+
+export const deleteTodoList = (data) => {
+    return new Promise((resolve, reject) => {
+        axios.post('/deleteTodoList', data, {
+            headers: headers
+        }).then(resp => {
+            if (resp.data.success) {
+                return resolve(resp);
+            } else {
+                return reject("delete todo list error");
+            }
+        }).catch(() => {
+            reject("delete todo list error");
+        });
+    });
+}
