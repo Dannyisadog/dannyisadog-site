@@ -28,7 +28,7 @@ class TodoListController extends Controller
                 throw new Exception("尚未登入");
             }
 
-            $lists = TodoList::where('user_id', $user->id)->orderBy('id', 'desc')->get();
+            $lists = TodoList::where('user_id', $user->id)->where('deleted_at', null)->orderBy('id', 'desc')->get();
 
             foreach ($lists as $list) {
                 $data['data'][] = [
@@ -124,6 +124,42 @@ class TodoListController extends Controller
                     'finished_at' => null
                 ]);
             }
+
+        } catch (Exception $e) {
+            $data['success'] = false;
+        }
+
+        echo json_encode($data);
+    }
+
+    public function deleteTodoList(Request $request)
+    {
+        $data = [
+            'success' => true
+        ];
+
+        try {
+            $user = Auth::user();
+
+            if (!$user) {
+                throw new Exception("尚未登入");
+            }
+
+            $list_id = $request->input("list_id");
+
+            $list = TodoList::find($list_id);
+
+            if (!$list) {
+                throw new Exception("todo list 不存在");
+            }
+
+            if ($list->user_id != $user->id) {
+                throw new Exception("todo list 不存在");
+            }
+
+            $list->update([
+                'deleted_at' => date('Y-m-d H:i:s')
+            ]);
 
         } catch (Exception $e) {
             $data['success'] = false;
