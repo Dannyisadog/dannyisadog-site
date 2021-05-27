@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { createTodoList, updateTodoItem } from '../api';
+import { createTodoList, updateTodoItem, deleteTodoList } from '../api';
 import $ from 'jquery';
 
 const Container = styled.div`
@@ -11,6 +11,7 @@ const Container = styled.div`
     background: white;
     padding: 20px;
     color: #333;
+    position: relative;
     
     .title {
         font-size: 16px;
@@ -76,6 +77,14 @@ const Container = styled.div`
     .create-item-button:hover {
         background: #ffbe81;
         color: white;
+    }
+
+    .close-icon {
+        position: absolute;
+        top: 5px;
+        right: 12px;
+        color: #cecece;
+        cursor: pointer;
     }
 `;
 
@@ -157,7 +166,7 @@ const TodoItem = ({type, content, setCreated}) => {
         }).catch((error) => {
             alert("新增失敗");
         });
-    }
+    };
 
     const updateItem = (list_id, item_id, finished) => {
         updateTodoItem({
@@ -165,7 +174,21 @@ const TodoItem = ({type, content, setCreated}) => {
             item_id: item_id,
             finished: finished
         }).then(resp => {
-            setCreated(true);
+            if (resp.data.success) {
+                setCreated(true);
+            }
+        }).catch(() => {
+
+        });
+    };
+
+    const deleteList = (list_id) => {
+        deleteTodoList({
+            list_id: list_id
+        }).then(resp => {
+            if (resp.data.success) {
+                setCreated(true);
+            }
         }).catch(() => {
 
         });
@@ -177,6 +200,7 @@ const TodoItem = ({type, content, setCreated}) => {
             {
                 type == 'show' ?
                 <>
+                    <div className="close-icon" onClick={() => deleteList(content.id)}>x</div>
                     <div className="title">{content.title} ({content.created_at})</div>
                     <div className="content">
                         {
