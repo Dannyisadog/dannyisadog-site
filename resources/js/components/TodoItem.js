@@ -194,6 +194,10 @@ const TodoItem = ({type, content, setCreated}) => {
         });
     }
 
+    const createTodoItem = () => {
+        setNewItemCount(newItemCount+ 1);
+        $(".content-input").animate({ scrollTop: "1000px" }, 500);
+    }
 
     return (
         <Container>
@@ -223,7 +227,7 @@ const TodoItem = ({type, content, setCreated}) => {
                     </div>
                     <div className="content-input">
                         {newItemList}
-                        <button className="create-item-button" onClick={()=>setNewItemCount(newItemCount+ 1)}>新增代辦事項</button>
+                        <button className="create-item-button" onClick={()=> createTodoItem()}>新增代辦事項</button>
                     </div>
                     <div className="create-button-container">
                         <button className="create-button" onClick={()=>handleCreate(setCreated)}>新增</button>
