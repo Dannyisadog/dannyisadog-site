@@ -17,9 +17,9 @@ class CreateTodoListTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string("title", 255);
-            $table->timestamp("deleted_at");
-            $table->timestamp("created_at");
-            $table->timestamp("updated_at");
+            $table->datetime("deleted_at")->nullable();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp("updated_at")->default(\DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
