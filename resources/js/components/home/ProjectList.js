@@ -26,7 +26,7 @@ const ProjectList = () => {
     return (
         <Container>
             <div className="title">
-                site projects
+                side projects
             </div>
             <div className="line"></div>
             <div className="content">
