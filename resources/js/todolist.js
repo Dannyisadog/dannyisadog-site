@@ -1,8 +1,8 @@
 import ReactDom from 'react-dom';
-import HomePage from './components/home/HomePage';
+import TodoList from './components/todolist/TodoList';
 
 ReactDom.render(
     <>
-        <HomePage />
+        <TodoList/>
     </>,
 document.getElementById('root'));

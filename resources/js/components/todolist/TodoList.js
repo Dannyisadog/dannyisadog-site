@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import TodoItem from './TodoItem';
 import styled from 'styled-components';
-import { fetchTodoList } from '../api';
-import FullPageLoader from './FullPageLoader';
+import { fetchTodoList } from '../../api';
+import FullPageLoader from '../shared/FullPageLoader';
 
 const Container = styled.div`
     display: flex;

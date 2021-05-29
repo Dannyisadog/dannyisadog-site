@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
+Route::get('/todolist', [App\Http\Controllers\HomeController::class, 'index']);
+
+// todo list
 Route::get('/fetchTodoList', [App\Http\Controllers\TodoListController::class, 'fetchTodoList']);
 Route::post('/createTodoList', [App\Http\Controllers\TodoListController::class, 'createTodoList']);
 Route::post('/updateTodoItem', [App\Http\Controllers\TodoListController::class, 'updateTodoItem']);
