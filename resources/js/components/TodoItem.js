@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { createTodoList, updateTodoItem, deleteTodoList } from '../api';
 import $ from 'jquery';
 
@@ -121,7 +122,7 @@ const CheckboxInput = styled.input`
     cursor: pointer;
 `;
 
-const TodoItem = ({type, content, setCreated}) => {
+const TodoItem = ({type, content, setCreated, setShowLoader}) => {
     const [newItemCount, setNewItemCount] = useState(2);
 
     let newItemList = [];
@@ -153,6 +154,8 @@ const TodoItem = ({type, content, setCreated}) => {
             return;
         }
     
+        setShowLoader(true);
+
         createTodoList({
             title: title,
             items: items
@@ -162,13 +165,15 @@ const TodoItem = ({type, content, setCreated}) => {
                 setCreated(true);
                 $("#title-input").val("");
                 $(".item-input").val("");
+                setShowLoader(false);
             }
-        }).catch((error) => {
+        }).catch(() => {
             alert("新增失敗");
         });
     };
 
     const updateItem = (list_id, item_id, finished) => {
+        setShowLoader(true);
         updateTodoItem({
             list_id: list_id,
             item_id: item_id,
@@ -176,21 +181,24 @@ const TodoItem = ({type, content, setCreated}) => {
         }).then(resp => {
             if (resp.data.success) {
                 setCreated(true);
+                setShowLoader(false);
             }
         }).catch(() => {
-
+            alert("更新失敗");
         });
     };
 
     const deleteList = (list_id) => {
+        setShowLoader(true);
         deleteTodoList({
             list_id: list_id
         }).then(resp => {
             if (resp.data.success) {
                 setCreated(true);
+                setShowLoader(false);
             }
         }).catch(() => {
-
+            alert("刪除失敗");
         });
     }
 
@@ -213,7 +221,7 @@ const TodoItem = ({type, content, setCreated}) => {
                                     <ListItem className="list-item" key={item.id} finished={item.finished_at}>
                                         <div className="item-content">{item.title}</div>
                                         <div className="checkbox">
-                                            <CheckboxInput type="checkbox" checked={item.finished_at ? true : false} onClick={(e)=>updateItem(item.list_id, item.id, e.target.checked)}/>
+                                            <CheckboxInput type="checkbox" checked={item.finished_at ? true : false} onChange={(e)=>updateItem(item.list_id, item.id, e.target.checked)}/>
                                         </div>
                                     </ListItem>
                                 );        
@@ -236,6 +244,10 @@ const TodoItem = ({type, content, setCreated}) => {
             }
         </Container>
     )
+}
+
+TodoItem.propTypes = {
+    setShowLoader: PropTypes.func.isRequied
 }
 
 export default TodoItem;
