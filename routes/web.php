@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
+Route::get('/home', [App\Http\Controllers\Controller::class, 'index']);
 Route::get('/todolist', [App\Http\Controllers\HomeController::class, 'index']);
 
 // todo list
