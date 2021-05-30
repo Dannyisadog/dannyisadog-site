@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 const Container = styled.a`
     text-decoration: none !important;
-    color: #333 !important;
+    color: white !important;
     width: 150px;
     height: 150px;
     display: flex;
+    transition: .3s;
     .content {
         display: flex;
         transition: .3s;
         flex-direction: column;
         justify-content: center;
-        border: 1px solid black;
+        border: 3px solid white;
         border-radius: 12px;
         align-items: center;
         font-size: 24px;
@@ -20,9 +21,13 @@ const Container = styled.a`
         height: 100%;
     }
     .content:hover {
-        background: #333;
-        color: white;
+        background: #f76c6c;
         font-size: 32px;
+        border: 3px solid #f76c6c;
+    }
+
+    :hover {
+        width: 300px;
     }
 `;
 

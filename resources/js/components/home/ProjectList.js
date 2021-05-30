@@ -2,15 +2,19 @@ import styled from 'styled-components';
 import ProjectItem from './ProjectItem';
 
 const Container = styled.div`
-    border: 1px solid #333;
+    border: 3px solid transparent;
     border-radius: 8px;
     padding: 20px;
+    background: #344f81;
+
     .title {
-        font-size: 24px;
+        font-size: 32px;
+        font-weight: bold;
+        color: white;
     }
     .line { 
         width: 100%;
-        border-top: 1px solid #333;
+        border-top: 3px solid white;
         margin-top: 10px;
         margin-bottom: 20px;
     }

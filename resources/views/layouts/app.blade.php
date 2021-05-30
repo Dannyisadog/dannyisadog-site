@@ -22,7 +22,7 @@
 <body>
     @yield('js-up')
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     @yield('nav-title', "Dannyisadog")
@@ -76,7 +76,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 main-content">
             @yield('content')
         </main>
     </div>

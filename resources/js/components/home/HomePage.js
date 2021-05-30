@@ -3,9 +3,7 @@ import Profolio from './Profoliio';
 import ProjectList from './ProjectList';
 
 const Container = styled.div`
-    .project-list-wrapper {
-        margin-top: 20px;
-    }
+   
 `;
 
 const HomePage = () => {
