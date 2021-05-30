@@ -6,3 +6,59 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    background: #A8D0E6 !important;
+
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        width: 96%;
+        top: 20px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10px;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        z-index: 1;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.32rem;
+        padding-bottom: 0.32rem;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-light .navbar-brand {
+        color: #223b69e6;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: #223b6980;
+    }
+
+    .nav-item {
+        font-size: 1.15rem;
+    }
+
+    .main-content {
+        margin-top: 80px;
+    }
+
+    .profile-img { 
+        background-image: url("../image/profolio/danny.jpeg");
+        width: 150px;
+        height: 150px;
+        background-size: contain;
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+}
