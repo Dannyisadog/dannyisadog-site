@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const Container = styled.a`
     text-decoration: none !important;
     color: white !important;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     display: flex;
     transition: .3s;
     .content {
