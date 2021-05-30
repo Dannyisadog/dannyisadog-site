@@ -7,12 +7,13 @@ import $ from 'jquery';
 const Container = styled.div`
     width: 200px;
     height: 280px;
-    border:1px solid #e9e9e9;
+    border:1px solid transparent;
     border-radius: 8px;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     color: #333;
     position: relative;
+    box-shadow: 1px 1px 8px #eee;
     
     .title {
         font-size: 16px;
@@ -52,15 +53,15 @@ const Container = styled.div`
     .create-button {
         width: 100%;
         height: 30px;
-        border: 1px solid #74b3ee;
+        border: 1px solid #344f81;
         border-radius: 4px;
         background: white;
         transition: .2s;
-        color: #74b3ee;
+        color: #344f81;
     }
 
     .create-button:hover {
-        background: #74b3ee;
+        background: #344f81;
         border: 1px solid white;
         color: white;
     }
@@ -76,7 +77,8 @@ const Container = styled.div`
     }
 
     .create-item-button:hover {
-        background: #ffbe81;
+        background: #f76c6c;
+        border: 1px solid transparent;
         color: white;
     }
 
@@ -84,8 +86,12 @@ const Container = styled.div`
         position: absolute;
         top: 5px;
         right: 12px;
-        color: #cecece;
+        color: #f76c6c;
         cursor: pointer;
+    }
+
+    input {
+        border: 1px solid #344f81;
     }
 `;
 
