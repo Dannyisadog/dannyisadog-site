@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import ProjectItem from './ProjectItem';
 
 const Container = styled.div`
-    border: 3px solid transparent;
+    border: 0;
     border-radius: 8px;
     padding: 20px;
-    background: #344f81;
+    background: linear-gradient(to right, #344f81, #A8D0E6);
 
     .title {
         font-size: 32px;
@@ -14,7 +14,8 @@ const Container = styled.div`
     }
     .line { 
         width: 100%;
-        border-top: 3px solid white;
+        height: 3px;
+        background: linear-gradient(to right, white, #A8D0E6);;
         margin-top: 10px;
         margin-bottom: 20px;
     }
