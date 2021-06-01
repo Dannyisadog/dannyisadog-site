@@ -53,16 +53,10 @@ const Container = styled.div`
     .create-button {
         width: 100%;
         height: 30px;
-        border: 1px solid #344f81;
+        border: 1px solid transparent;
         border-radius: 4px;
-        background: white;
-        transition: .2s;
-        color: #344f81;
-    }
-
-    .create-button:hover {
         background: #344f81;
-        border: 1px solid white;
+        transition: .2s;
         color: white;
     }
 

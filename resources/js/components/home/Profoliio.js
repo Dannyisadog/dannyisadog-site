@@ -5,7 +5,7 @@ const Container = styled.div`
     border:0;
     border-radius: 8px;
     padding: 20px;
-    background: linear-gradient(to right, #344f81, #A8D0E6);
+    background: linear-gradient(to right, #3f5580, #122d57);
     
     .title {
         font-size: 32px;
@@ -16,7 +16,7 @@ const Container = styled.div`
     .line { 
         width: 100%;
         height: 3px;
-        background: linear-gradient(to right, white, #A8D0E6);;
+        background: linear-gradient(to right, white, #122d57);;
         margin-top: 10px;
         margin-bottom: 20px;
     }
