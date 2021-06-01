@@ -8,7 +8,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-    background: #A8D0E6 !important;
+    background: #122d57 !important;
 
     .navbar {
         display: flex;
@@ -60,5 +60,10 @@ body {
         background-size: contain;
         border-radius: 50%;
         border: 3px solid white;
+        transition: .2s;
+    }
+
+    .profile-img:hover {
+        border-radius: 8px;
     }
 }
