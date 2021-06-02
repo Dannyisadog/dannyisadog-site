@@ -25,6 +25,12 @@ const Container = styled.div`
         color: white;
         .about {
             display: flex;
+
+            .profile-img-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
         .basic-info {
             display: flex;
@@ -53,7 +59,9 @@ const Profolio = () => {
             <div className="line"></div>
             <div className="content">
                 <div className="about">
-                    <div className="profile-img"></div>
+                    <div className="profile-img-wrapper">
+                        <div className="profile-img"></div>
+                    </div>
                     <div className="basic-info">
                         <div className="name">
                             陳鍾逸 Danny
