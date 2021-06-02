@@ -23,6 +23,8 @@ const Container = styled.div`
 
     .content {
         color: white;
+        display: flex;
+        height: 200px;
         .about {
             display: flex;
 
@@ -47,6 +49,38 @@ const Container = styled.div`
                 color: #f76c6c;
             }
         }
+
+        .block-line {
+            border-left: 3px solid #ffffff50;
+            border-radius: 8px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            .skill-block {
+                border: 2px solid #ffffffa0;
+                border-radius: 8px;
+                padding: 6px 12px;
+                width: 120px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+                cursor: pointer;
+                transition: .3s;
+            }
+            .skill-block:hover {
+                color: #f76c6c;
+                border: 2px solid #f76c6c;
+                font-size: 22px;
+            }
+        }
     }
 `;
 
@@ -67,18 +101,34 @@ const Profolio = () => {
                             陳鍾逸 Danny
                         </div>
                         <div className="age">
-                            25歲
+                            25
                         </div>
                         <div className="gender">
-                            男生
+                            male
                         </div>
                         <div className="job-title">
-                            網站工程師
+                            web engineer
                         </div>
                         <div className="email">
                             <a target="_blank" className="email" href = "mailto: dannyisadog10@gmail.com">dannyisadog10@gmail.com</a>
                         </div>
                     </div>
+                </div>
+                <div className="block-line"></div>
+                <div className="skill">
+                    <div className="font-end skill-block">
+                        <div>font-end</div>
+                    </div>
+                    <div className="back-end skill-block">
+                        <div>back-end</div>
+                    </div>
+                    <div className="dev-ops skill-block">
+                        <div>dev-ops</div>
+                    </div>
+                </div>
+                <div className="block-line"></div>
+                <div className="introduction">
+
                 </div>
             </div>
         </Container>
