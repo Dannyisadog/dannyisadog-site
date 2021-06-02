@@ -116,8 +116,8 @@ const Profolio = () => {
                 </div>
                 <div className="block-line"></div>
                 <div className="skill">
-                    <div className="font-end skill-block">
-                        <div>font-end</div>
+                    <div className="front-end skill-block">
+                        <div>front-end</div>
                     </div>
                     <div className="back-end skill-block">
                         <div>back-end</div>
