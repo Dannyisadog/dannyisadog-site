@@ -73,4 +73,12 @@ body {
     .profile-img:hover {
         border-radius: 8px;
     }
+
+    .close-icon {
+        color: white;
+        background-image: url("../image/shared/close-icon.svg");
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+    }
 }
