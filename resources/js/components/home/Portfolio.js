@@ -85,7 +85,7 @@ const Container = styled.div`
     }
 `;
 
-const Profolio = ({setShowPopupModal, setModalData}) => {
+const Portfolio = ({setShowPopupModal, setModalData}) => {
 
     const handleFrontEnd = () => {
         setModalData({
@@ -111,7 +111,7 @@ const Profolio = ({setShowPopupModal, setModalData}) => {
     return (
         <Container>
             <div className="title">
-                profolio
+                portfolio
             </div>
             <div className="line"></div>
             <div className="content">
@@ -158,9 +158,9 @@ const Profolio = ({setShowPopupModal, setModalData}) => {
     );
 }
 
-Profolio.propTypes = {
+Portfolio.propTypes = {
     setShowPopupModal: PropTypes.func.isRequired,
     setModalData:PropTypes.func.isRequired
 }
 
-export default Profolio;
+export default Portfolio;
