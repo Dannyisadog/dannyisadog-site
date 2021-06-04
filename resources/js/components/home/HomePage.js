@@ -1,6 +1,6 @@
 import {useState} from "react";
 import styled from 'styled-components';
-import Profolio from './Profoliio';
+import Portfolio from './Portfolio';
 import ProjectList from './ProjectList';
 import PopupModal from "../shared/PopupModal";
 
@@ -18,8 +18,8 @@ const HomePage = () => {
     return (
         <Container>
             <PopupModal data={modalData} show={showPopupModal} setShow={setShowPopupModal} />
-            <div className="profolio-wrapper">
-                <Profolio setShowPopupModal={setShowPopupModal} setModalData={setModalData} />
+            <div className="portfolio-wrapper">
+                <Portfolio setShowPopupModal={setShowPopupModal} setModalData={setModalData} />
             </div>
             <div className="project-list-wrapper">
                 <ProjectList />
