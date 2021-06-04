@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from "prop-types";
 
 const Container = styled.div`
     width: 100%;
@@ -84,7 +85,29 @@ const Container = styled.div`
     }
 `;
 
-const Profolio = () => {
+const Profolio = ({setShowPopupModal, setModalData}) => {
+
+    const handleFrontEnd = () => {
+        setModalData({
+            title: "front-end"
+        });
+        setShowPopupModal(true);
+    }
+
+    const handleBackEnd = () => {
+        setModalData({
+            title: "back-end"
+        });
+        setShowPopupModal(true);
+    }
+
+    const handleDevops = () => {
+        setModalData({
+            title: "dev-ops"
+        });
+        setShowPopupModal(true);
+    }
+
     return (
         <Container>
             <div className="title">
@@ -101,13 +124,13 @@ const Profolio = () => {
                             陳鍾逸 Danny
                         </div>
                         <div className="age">
-                            25
+                            25歲
                         </div>
-                        <div className="gender">
-                            male
+                        <div className="gradutation">
+                            大同資工所
                         </div>
                         <div className="job-title">
-                            web engineer
+                            網站工程師
                         </div>
                         <div className="email">
                             <a target="_blank" className="email" href = "mailto: dannyisadog10@gmail.com">dannyisadog10@gmail.com</a>
@@ -116,13 +139,13 @@ const Profolio = () => {
                 </div>
                 <div className="block-line"></div>
                 <div className="skill">
-                    <div className="front-end skill-block">
+                    <div className="front-end skill-block" onClick={handleFrontEnd}>
                         <div>front-end</div>
                     </div>
-                    <div className="back-end skill-block">
+                    <div className="back-end skill-block" onClick={handleBackEnd}>
                         <div>back-end</div>
                     </div>
-                    <div className="dev-ops skill-block">
+                    <div className="dev-ops skill-block" onClick={handleDevops}>
                         <div>dev-ops</div>
                     </div>
                 </div>
@@ -133,6 +156,11 @@ const Profolio = () => {
             </div>
         </Container>
     );
+}
+
+Profolio.propTypes = {
+    setShowPopupModal: PropTypes.func.isRequired,
+    setModalData:PropTypes.func.isRequired
 }
 
 export default Profolio;
