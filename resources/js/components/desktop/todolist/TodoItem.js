@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { createTodoList, updateTodoItem, deleteTodoList } from '../../api';
+import { createTodoList, updateTodoItem, deleteTodoList } from '../../../api';
 import $ from 'jquery';
 
 const Container = styled.div`
@@ -76,7 +76,7 @@ const Container = styled.div`
         color: white;
     }
 
-    .close-icon {
+    .item-close-icon {
         position: absolute;
         top: 5px;
         right: 12px;
@@ -212,7 +212,7 @@ const TodoItem = ({type, content, setCreated, setShowLoader}) => {
             {
                 type == 'show' ?
                 <>
-                    <div className="close-icon" onClick={() => deleteList(content.id)}>x</div>
+                    <div className="item-close-icon" onClick={() => deleteList(content.id)}>x</div>
                     <div className="title">{content.title} ({content.created_at})</div>
                     <div className="content">
                         {
@@ -247,7 +247,7 @@ const TodoItem = ({type, content, setCreated, setShowLoader}) => {
 }
 
 TodoItem.propTypes = {
-    setShowLoader: PropTypes.func.isRequied
+    setShowLoader: PropTypes.func.isRequired
 }
 
 export default TodoItem;
