@@ -2,7 +2,7 @@ import {useState} from "react";
 import styled from 'styled-components';
 import Portfolio from './Portfolio';
 import ProjectList from './ProjectList';
-import PopupModal from "../shared/PopupModal";
+import PopupModal from "../../shared/PopupModal";
 
 const Container = styled.div`
     .project-list-wrapper {

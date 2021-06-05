@@ -1,8 +1,17 @@
 import ReactDom from 'react-dom';
-import TodoList from './components/todolist/TodoList';
+import TodoList from './components/desktop/todolist/TodoList';
+import MobileTodoList from './components/mobile/todolist/TodoList';
+
+import { isMobile } from "react-device-detect";
+
+let TodoListComponent = TodoList;
+
+if (isMobile) {
+    TodoListComponent = MobileTodoList;
+}
 
 ReactDom.render(
     <>
-        <TodoList/>
+        <TodoListComponent/>
     </>,
 document.getElementById('root'));
