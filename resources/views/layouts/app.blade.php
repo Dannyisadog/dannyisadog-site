@@ -24,6 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
+                <div class="logo"></div>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     @yield('nav-title', "Dannyisadog")
                 </a>

@@ -81,4 +81,10 @@ body {
         height: 20px;
         background-size: contain;
     }
+
+    .logo {
+      background-image: url("../image/logo/logo.svg");
+      height: 100%;
+      background-size: cover;
+    }
 }
