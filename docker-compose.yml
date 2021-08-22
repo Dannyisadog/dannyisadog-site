@@ -3,7 +3,7 @@ version: '3'
 services:
     laravel.test:
         build:
-            context: ./vendor/laravel/sail/runtimes/8.0
+            context: ./docker/8.0
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
@@ -18,11 +18,11 @@ services:
         networks:
             - sail
         depends_on:
-            - mysql
+            - mariadb
             - redis
             - selenium
-    mysql:
-        image: 'mysql:8.0'
+    mariadb:
+        image: 'mariadb'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
@@ -47,14 +47,6 @@ services:
             - sail
         healthcheck:
           test: ["CMD", "redis-cli", "ping"]
-    meilisearch:
-        image: 'getmeili/meilisearch:latest'
-        ports:
-            - '${FORWARD_MEILISEARCH_PORT:-7700}:7700'
-        volumes:
-            - 'sailmeilisearch:/data.ms'
-        networks:
-            - sail
     mailhog:
         image: 'mailhog/mailhog:latest'
         ports:
