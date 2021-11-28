@@ -31,7 +31,7 @@ const ProjectList = () => {
     return (
         <Container>
             <div className="title">
-                side projects
+                一些小專案。。。
             </div>
             <div className="line"></div>
             <div className="content">

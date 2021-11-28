@@ -868,7 +868,7 @@ var Portfolio = function Portfolio(_ref) {
 
   var handleAbout = function handleAbout() {
     setModalData({
-      title: "about",
+      title: "關於我",
       content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shared_AboutContent__WEBPACK_IMPORTED_MODULE_1__.default, {})
     });
     setShowPopupModal(true);
@@ -876,7 +876,7 @@ var Portfolio = function Portfolio(_ref) {
 
   var handleFrontEnd = function handleFrontEnd() {
     setModalData({
-      title: "front end",
+      title: "前端",
       content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shared_FrontendContent__WEBPACK_IMPORTED_MODULE_2__.default, {})
     });
     setShowPopupModal(true);
@@ -884,7 +884,7 @@ var Portfolio = function Portfolio(_ref) {
 
   var handleBackEnd = function handleBackEnd() {
     setModalData({
-      title: "back end",
+      title: "後端",
       content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shared_BackendContent__WEBPACK_IMPORTED_MODULE_3__.default, {})
     });
     setShowPopupModal(true);
@@ -892,7 +892,7 @@ var Portfolio = function Portfolio(_ref) {
 
   var handleDevops = function handleDevops() {
     setModalData({
-      title: "dev ops",
+      title: "Devops",
       content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_shared_DevopsContent__WEBPACK_IMPORTED_MODULE_4__.default, {})
     });
     setShowPopupModal(true);
@@ -901,7 +901,7 @@ var Portfolio = function Portfolio(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Container, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "title",
-      children: "portfolio"
+      children: "\u95DC\u65BC\u6211"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "line"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -943,25 +943,25 @@ var Portfolio = function Portfolio(_ref) {
           className: "front-end skill-block",
           onClick: handleAbout,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            children: "about"
+            children: "\u4ECB\u7D39"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "front-end skill-block",
           onClick: handleFrontEnd,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            children: "front-end"
+            children: "\u524D\u7AEF"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "back-end skill-block",
           onClick: handleBackEnd,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            children: "back-end"
+            children: "\u5F8C\u7AEF"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "dev-ops skill-block",
           onClick: handleDevops,
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            children: "dev-ops"
+            children: "Devops"
           })
         })]
       })]
@@ -1055,7 +1055,7 @@ var ProjectList = function ProjectList() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(Container, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "title",
-      children: "side projects"
+      children: "\u4E00\u4E9B\u5C0F\u5C08\u6848\u3002\u3002\u3002"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "line"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
@@ -1133,9 +1133,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n"])));
 
 var BackendContent = function BackendContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {
-    children: "33"
-  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BackendContent);
@@ -1164,9 +1162,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n"])));
 
 var DevopsContent = function DevopsContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {
-    children: "44"
-  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DevopsContent);
@@ -1195,11 +1191,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n"])));
 
 var FrontendContent = function FrontendContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-      children: "123"
-    })
-  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FrontendContent);

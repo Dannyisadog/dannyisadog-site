@@ -6,7 +6,7 @@ const Container = styled.div`
 
 const BackendContent = () => {
   return (
-    <Container>33</Container>
+    <Container></Container>
   );
 }
 
