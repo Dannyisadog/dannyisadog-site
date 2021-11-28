@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import PropTypes from "prop-types";
 
+import AboutContent from '../../shared/AboutContent';
+import FrontendContent from '../../shared/FrontendContent';
+import BackendContent from '../../shared/BackendContent';
+import DevopsContent from '../../shared/DevopsContent';
+
 const Container = styled.div`
     width: 100%;
     border:0;
@@ -41,45 +46,52 @@ const Container = styled.div`
             justify-content: space-between;
             margin-left: 20px;
             font-size: 16px;
-            .email {
+            .github {
                 color: white;
                 text-decoration: none !important;
                 transition: .3s;
             }
-            .email:hover {
+            .github:hover {
                 color: #f76c6c;
             }
         }
 
         .block-line {
-            border-left: 3px solid #ffffff50;
+            border-left: 2px solid #ffffff50;
             border-radius: 8px;
             margin-left: 20px;
             margin-right: 20px;
         }
 
         .skill {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: space-around;
             
             .skill-block {
-                border: 2px solid #ffffffa0;
+                border: 3px solid white;
                 border-radius: 8px;
                 padding: 6px 12px;
                 width: 125px;
-                height: 50px;
+                height: 125px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 16px;
+                font-size: 22px;
                 cursor: pointer;
                 transition: .3s;
+                /* color: #f7d76c;
+                border: 3px solid #f7d76c; */
             }
             .skill-block:hover {
                 color: #f76c6c;
-                border: 2px solid #f76c6c;
-                font-size: 22px;
+                /* color: #f7d76c; */
+                border: 3px solid #f76c6c;
+                /* border: 3px solid #f7d76c; */
+                width: 170px;
+                height: 170px;
+                font-size: 32px;
             }
         }
     }
@@ -87,23 +99,34 @@ const Container = styled.div`
 
 const Portfolio = ({setShowPopupModal, setModalData}) => {
 
+    const handleAbout = () => {
+        setModalData({
+            title: "about",
+            content: <AboutContent/>
+        });
+        setShowPopupModal(true);
+    }
+
     const handleFrontEnd = () => {
         setModalData({
-            title: "front-end"
+            title: "front end",
+            content: <FrontendContent/>
         });
         setShowPopupModal(true);
     }
 
     const handleBackEnd = () => {
         setModalData({
-            title: "back-end"
+            title: "back end",
+            content: <BackendContent/>
         });
         setShowPopupModal(true);
     }
 
     const handleDevops = () => {
         setModalData({
-            title: "dev-ops"
+            title: "dev ops",
+            content: <DevopsContent/>
         });
         setShowPopupModal(true);
     }
@@ -124,7 +147,7 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
                             陳鍾逸 Danny
                         </div>
                         <div className="age">
-                            25歲
+                            26歲
                         </div>
                         <div className="gradutation">
                             大同資工所
@@ -132,13 +155,16 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
                         <div className="job-title">
                             網站工程師
                         </div>
-                        <div className="email">
-                            <a target="_blank" className="email" href = "mailto: dannyisadog10@gmail.com">dannyisadog10@gmail.com</a>
+                        <div className="github">
+                            <a target="_blank" className="github" href="https://github.com/Dannyisadog/">github.com/Dannyisadog</a>
                         </div>
                     </div>
                 </div>
-                <div className="block-line"></div>
+                {/* <div className="block-line"></div> */}
                 <div className="skill">
+                    <div className="front-end skill-block" onClick={handleAbout}>
+                        <div>about</div>
+                    </div>
                     <div className="front-end skill-block" onClick={handleFrontEnd}>
                         <div>front-end</div>
                     </div>
@@ -148,10 +174,6 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
                     <div className="dev-ops skill-block" onClick={handleDevops}>
                         <div>dev-ops</div>
                     </div>
-                </div>
-                <div className="block-line"></div>
-                <div className="introduction">
-
                 </div>
             </div>
         </Container>
