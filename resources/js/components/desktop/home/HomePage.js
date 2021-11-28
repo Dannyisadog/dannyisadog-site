@@ -13,7 +13,10 @@ const Container = styled.div`
 const HomePage = () => {
 
     const [showPopupModal, setShowPopupModal] = useState(false);
-    const [modalData, setModalData] = useState({});
+    const [modalData, setModalData] = useState({
+        title: "",
+        content: ""
+    });
 
     return (
         <Container>

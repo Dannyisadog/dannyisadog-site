@@ -12,6 +12,7 @@ const Container = styled.div`
     left: 0;
     top: 0;
     background: #000000a0;
+    z-index: 99;
 
     @media only screen and (max-width: 600px) {
         align-items: flex-end;

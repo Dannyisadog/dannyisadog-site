@@ -54,13 +54,12 @@ body {
     }
 
     .profile-img { 
-        background-image: url("../image/portfolio/danny.jpeg");
+        background-image: url("../image/portfolio/danny2.png");
         width: 150px;
         height: 150px;
-        background-size: contain;
+        background-size: cover;
         border-radius: 50%;
         border: 3px solid white;
-        transition: .2s;
     }
 
     @media only screen and (max-width: 600px) {
@@ -68,10 +67,6 @@ body {
             width: 80px;
             height: 80px
         }
-    }
-
-    .profile-img:hover {
-        border-radius: 8px;
     }
 
     .close-icon {
