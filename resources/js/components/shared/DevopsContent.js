@@ -5,7 +5,7 @@ const Container = styled.div`
 `;
 
 const DevopsContent = () => {
-  return (<Container>44</Container>);
+  return (<Container></Container>);
 }
 
 export default DevopsContent;

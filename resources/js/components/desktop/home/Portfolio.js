@@ -101,7 +101,7 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
 
     const handleAbout = () => {
         setModalData({
-            title: "about",
+            title: "關於我",
             content: <AboutContent/>
         });
         setShowPopupModal(true);
@@ -109,7 +109,7 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
 
     const handleFrontEnd = () => {
         setModalData({
-            title: "front end",
+            title: "前端",
             content: <FrontendContent/>
         });
         setShowPopupModal(true);
@@ -117,7 +117,7 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
 
     const handleBackEnd = () => {
         setModalData({
-            title: "back end",
+            title: "後端",
             content: <BackendContent/>
         });
         setShowPopupModal(true);
@@ -125,7 +125,7 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
 
     const handleDevops = () => {
         setModalData({
-            title: "dev ops",
+            title: "Devops",
             content: <DevopsContent/>
         });
         setShowPopupModal(true);
@@ -134,7 +134,7 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
     return (
         <Container>
             <div className="title">
-                portfolio
+                關於我
             </div>
             <div className="line"></div>
             <div className="content">
@@ -163,16 +163,16 @@ const Portfolio = ({setShowPopupModal, setModalData}) => {
                 {/* <div className="block-line"></div> */}
                 <div className="skill">
                     <div className="front-end skill-block" onClick={handleAbout}>
-                        <div>about</div>
+                        <div>介紹</div>
                     </div>
                     <div className="front-end skill-block" onClick={handleFrontEnd}>
-                        <div>front-end</div>
+                        <div>前端</div>
                     </div>
                     <div className="back-end skill-block" onClick={handleBackEnd}>
-                        <div>back-end</div>
+                        <div>後端</div>
                     </div>
                     <div className="dev-ops skill-block" onClick={handleDevops}>
-                        <div>dev-ops</div>
+                        <div>Devops</div>
                     </div>
                 </div>
             </div>
