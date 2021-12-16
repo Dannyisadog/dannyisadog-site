@@ -999,7 +999,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.a(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    text-decoration: none !important;\n    color: white !important;\n    width: 120px;\n    height: 120px;\n    display: flex;\n    transition: .3s;\n    .content {\n        display: flex;\n        transition: .3s;\n        flex-direction: column;\n        justify-content: center;\n        border: 3px solid white;\n        border-radius: 12px;\n        align-items: center;\n        font-size: 24px;\n        width: 100%;\n        height: 100%;\n    }\n    .content:hover {\n        background: #f76c6c;\n        font-size: 32px;\n        border: 3px solid #f76c6c;\n    }\n\n    :hover {\n        width: 300px;\n    }\n"])));
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.a(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    text-decoration: none !important;\n    color: white !important;\n    min-width: 120px;\n    height: 120px;\n    display: flex;\n    transition: .3s;\n    .content {\n        display: flex;\n        transition: .3s;\n        flex-direction: column;\n        justify-content: center;\n        border: 3px solid white;\n        border-radius: 12px;\n        align-items: center;\n        font-size: 24px;\n        width: 100%;\n        height: 100%;\n        padding: 0 20px;\n    }\n    .content:hover {\n        background: #f76c6c;\n        border: 3px solid #f76c6c;\n    }\n"])));
 
 var ProjectItem = function ProjectItem(_ref) {
   var title = _ref.title,
@@ -1073,6 +1073,13 @@ var ProjectList = function ProjectList() {
           url: "https://ttumc.dannyisadog.com",
           new_tab: true
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "project-item",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ProjectItem__WEBPACK_IMPORTED_MODULE_0__.default, {
+          title: "cyberdemon",
+          url: "https://cyberdemon.dannyisadog.com",
+          new_tab: true
+        })
       })]
     })]
   });
@@ -1101,10 +1108,12 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral([""])));
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  padding: 0 12px;\n  color: white;\n  font-size: 24px;\n"])));
 
 var AboutContent = function AboutContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {
+    children: "\u4F60\u597D\uFF0C\u6211\u662F\u4E39\u5C3C\uFF0C\u76EE\u524D\u4EFB\u8077\u65BC\u677E\u679C\u8CFC\u7269\u64D4\u4EFB\u8EDF\u9AD4\u5DE5\u7A0B\u5E2B\u3002\u4E3B\u8981\u7684\u5DE5\u4F5C\u5167\u5BB9\u70BA\u524D\u5F8C\u53F0\u7684\u958B\u767C\u8207\u7DAD\u8B77\u3002"
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutContent);
@@ -1130,10 +1139,23 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n"])));
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: white;\n  font-size: 28px;\n"])));
 
 var BackendContent = function BackendContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "php"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "codeigniter"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "laravel"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "mysql"
+      })]
+    })
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BackendContent);
@@ -1159,10 +1181,19 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n"])));
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: white;\n  font-size: 28px;\n"])));
 
 var DevopsContent = function DevopsContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(Container, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+      children: "jenkins, droneCI, ecs"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+      children: "\u6539\u5584\u5F8C\u7AEF\u3001\u524D\u7AEF\u4E0A\u7248\u6D41\u7A0B (shell script)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+      children: "\u5BE6\u9A57\u5C07production container\u5316 (ecs)"
+    })]
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DevopsContent);
@@ -1188,10 +1219,23 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n"])));
+
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n  color: white;\n  ul {\n    font-size: 28px;\n  }\n"])));
 
 var FrontendContent = function FrontendContent() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Container, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "jquery"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "vue, vuex"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "react, nextjs"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+        children: "google amp"
+      })]
+    })
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FrontendContent);
