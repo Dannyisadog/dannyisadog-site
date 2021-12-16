@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Container = styled.a`
     text-decoration: none !important;
     color: white !important;
-    width: 120px;
+    min-width: 120px;
     height: 120px;
     display: flex;
     transition: .3s;
@@ -19,15 +19,11 @@ const Container = styled.a`
         font-size: 24px;
         width: 100%;
         height: 100%;
+        padding: 0 20px;
     }
     .content:hover {
         background: #f76c6c;
-        font-size: 32px;
         border: 3px solid #f76c6c;
-    }
-
-    :hover {
-        width: 300px;
     }
 `;
 
