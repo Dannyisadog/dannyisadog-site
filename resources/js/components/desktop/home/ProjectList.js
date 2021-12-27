@@ -42,7 +42,7 @@ const ProjectList = () => {
                     <ProjectItem title="ttumc" url="https://ttumc.dannyisadog.com" new_tab/>
                 </div>
                 <div className="project-item">
-                    <ProjectItem title="cyberdemon" url="https://cyberdemon.dannyisadog.com" new_tab/>
+                    <ProjectItem title="cyberdemon" url="https://cyberdemon.club" new_tab/>
                 </div>
             </div>
         </Container>
