@@ -9,10 +9,8 @@ const Container = styled.div`
   top: 0;
   right: 0;
   z-index: 1;
-  /* padding: 0 30%; */
   transition: 0.5s;
   transform: ${(props) => props.show ? "translateX(0)" : "translateX(100%)"};
-  /* background: #3333332c; */
   .close-icon {
     position: absolute;
     right: 20px;
@@ -37,7 +35,7 @@ const Container = styled.div`
 
     .menu {
       padding: 5rem 1rem 2rem 1.5rem;
-      background: #333;
+      background: #222;
       width: 20rem;
     }
 
