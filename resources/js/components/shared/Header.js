@@ -46,6 +46,7 @@ const Container = styled.div`
     }
 
     @media screen and (max-width: 800px) {
+      justify-content: center;
       .menu {
         display: none;
       }

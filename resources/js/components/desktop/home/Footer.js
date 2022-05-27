@@ -34,6 +34,11 @@ const Container = styled.div`
 
   @media screen and (max-width: 800px) {
     border-radius: 0;
+    padding: 0 20px;
+    justify-content: center;
+    .copyright {
+      display: none;
+    }
   }
 `;
 
