@@ -75,7 +75,7 @@ const Container = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ setSideMenu }) => {
   return (
     <Container>
       <div className="container">
@@ -91,7 +91,7 @@ const Header = () => {
             <li>Contact</li>
           </ul>
         </div>
-        <div className="hamburger">
+        <div className="hamburger" onClick={() => { setSideMenu(true) }}>
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>

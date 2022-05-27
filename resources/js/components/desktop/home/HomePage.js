@@ -1,7 +1,10 @@
+import { useState } from "react";
+
 import styled from 'styled-components';
 
 import Header from '../../shared/Header';
 import MainBlock from './MainBlock';
+import SideMenu from '../../shared/SideMenu';
 import Footer from './Footer';
 
 const Container = styled.div`
@@ -24,13 +27,16 @@ const Container = styled.div`
 `;
 
 const HomePage = () => {
+  const [sideMenu, setSideMenu] = useState(false);
+
   return (
     <Container>
-      <Header />
+      <Header setSideMenu={setSideMenu} />
       <div className="main-block-wrapper">
         <MainBlock />
       </div>
       <Footer />
+      <SideMenu show={sideMenu} setShow={setSideMenu} />
     </Container>
   );
 }
