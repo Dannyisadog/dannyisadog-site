@@ -54,9 +54,9 @@ const SideMenu = ({ show, setShow }) => {
     setShow(false);
   }
   return (
-    <Container show={show} onClick={close}>
+    <Container show={show}>
       <div className="close-icon" onClick={close}></div>
-      <div className="blank-space"></div>
+      <div className="blank-space" onClick={close} />
       <div className="menu">
         <div className="item">About Me</div>
         <div className="item">Resume</div>
