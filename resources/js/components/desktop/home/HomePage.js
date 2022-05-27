@@ -13,6 +13,7 @@ const Container = styled.div`
     border-radius: 40px;
     position: relative;
     margin-top: 40px;
+    overflow: ${(props) => props.sideMenu ? "hidden" : "auto"};
 
     @media screen and (max-width: 800px) {
       position: absolute;
@@ -30,7 +31,7 @@ const HomePage = () => {
   const [sideMenu, setSideMenu] = useState(false);
 
   return (
-    <Container>
+    <Container sideMenu={sideMenu}>
       <Header setSideMenu={setSideMenu} />
       <div className="main-block-wrapper">
         <MainBlock />
