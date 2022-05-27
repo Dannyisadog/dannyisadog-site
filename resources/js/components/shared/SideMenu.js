@@ -3,31 +3,48 @@ import styled from "styled-components";
 const Container = styled.div`
   position: fixed;
   display: none;
-  width: 50%;
   color: white;
   height: 100vh;
+  width: 100vw;
   top: 0;
   right: 0;
   z-index: 1;
-  background: #333;
-  padding: 6rem 2rem 2rem 2rem;
+  /* padding: 0 30%; */
   transition: 0.5s;
-  transform: ${(props) => props.show ? "translateX(0px)" : "translateX(200px)"};
+  transform: ${(props) => props.show ? "translateX(0)" : "translateX(100%)"};
+  /* background: #3333332c; */
   .close-icon {
     position: absolute;
     right: 20px;
-    top: 40px;
-    width: 2rem;
-    height: 2rem;
+    top: 30px;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
   .item {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
   }
 
   @media screen and (max-width: 800px) {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+
+    .blank-space {
+
+    }
+
+    .menu {
+      padding: 5rem 1rem 2rem 1.5rem;
+      background: #333;
+      width: 20rem;
+    }
+
+    .blank-space {
+      visibility: ${(props) => props.show ? "visible" : "hidden"};
+      width: 100%;
+      background-color: #3333335e;
+    }
   }
 `;
 
@@ -36,12 +53,15 @@ const SideMenu = ({ show, setShow }) => {
     setShow(false);
   }
   return (
-    <Container show={show}>
+    <Container show={show} onClick={close}>
       <div className="close-icon" onClick={close}></div>
-      <div className="item">About Me</div>
-      <div className="item">Resume</div>
-      <div className="item">Portfolio</div>
-      <div className="item">Contact</div>
+      <div className="blank-space"></div>
+      <div className="menu">
+        <div className="item">About Me</div>
+        <div className="item">Resume</div>
+        <div className="item">Portfolio</div>
+        <div className="item">Contact</div>
+      </div>
     </Container >
   );
 }
