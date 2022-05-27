@@ -4,6 +4,7 @@ const Container = styled.div`
   .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .logo-wrapper {
       display: flex;
@@ -45,11 +46,31 @@ const Container = styled.div`
       }
     }
 
+    .hamburger {
+      display: none;
+    }
+
     @media screen and (max-width: 800px) {
-      justify-content: center;
       .menu {
         display: none;
       }
+      .hamburger {
+        display: flex;
+      }
+    }
+  }
+
+  .hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .line {
+      border-radius: 4px;
+      width: 100%;
+      height: 3px;
+      background: #f0f0f0;
     }
   }
 `;
@@ -69,6 +90,11 @@ const Header = () => {
             <li>Portfolio</li>
             <li>Contact</li>
           </ul>
+        </div>
+        <div className="hamburger">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
       </div>
     </Container>
