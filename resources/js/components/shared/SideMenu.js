@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: fixed;
-  /* width: ${(props) => props.show ? "50%" : "0"}; */
+  display: none;
   width: 50%;
   color: white;
   height: 100vh;
   top: 0;
   right: 0;
   z-index: 1;
-  background: #222;
+  background: #333;
   padding: 6rem 2rem 2rem 2rem;
   transition: 0.5s;
   transform: ${(props) => props.show ? "translateX(0px)" : "translateX(200px)"};
@@ -24,6 +24,10 @@ const Container = styled.div`
   .item {
     font-size: 1.5rem;
     margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 800px) {
+    display: block;
   }
 `;
 
