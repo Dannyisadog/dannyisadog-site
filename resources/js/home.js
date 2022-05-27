@@ -4,7 +4,6 @@ import HomePage from './components/desktop/home/HomePage';
 let HomeComponent = HomePage;
 
 ReactDom.render(
-    <>
-        <HomeComponent />
-    </>,
-document.getElementById('root'));
+  <HomeComponent />,
+  document.getElementById('root')
+);

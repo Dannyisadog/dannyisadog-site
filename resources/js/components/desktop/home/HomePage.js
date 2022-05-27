@@ -1,34 +1,40 @@
-import {useState} from "react";
 import styled from 'styled-components';
-import Portfolio from './Portfolio';
-import ProjectList from './ProjectList';
-import PopupModal from "../../shared/PopupModal";
+
+import Header from '../../shared/Header';
+import MainBlock from './MainBlock';
+import Footer from './Footer';
 
 const Container = styled.div`
-    .project-list-wrapper {
-        margin-top: 20px;
+    padding: 40px 40px 100px 40px;
+    background-color: #222;
+    border-radius: 40px;
+    position: relative;
+    margin-top: 40px;
+
+    @media screen and (max-width: 800px) {
+      position: absolute;
+      margin-top: 0;
+      border-radius: 0;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
+    .main-block-wrapper {
+      margin-top: 60px;
     }
 `;
 
 const HomePage = () => {
-
-    const [showPopupModal, setShowPopupModal] = useState(false);
-    const [modalData, setModalData] = useState({
-        title: "",
-        content: ""
-    });
-
-    return (
-        <Container>
-            <PopupModal data={modalData} show={showPopupModal} setShow={setShowPopupModal} />
-            <div className="portfolio-wrapper">
-                <Portfolio setShowPopupModal={setShowPopupModal} setModalData={setModalData} />
-            </div>
-            <div className="project-list-wrapper">
-                <ProjectList />
-            </div>
-        </Container>
-    );
+  return (
+    <Container>
+      <Header />
+      <div className="main-block-wrapper">
+        <MainBlock />
+      </div>
+      <Footer />
+    </Container>
+  );
 }
 
 export default HomePage;

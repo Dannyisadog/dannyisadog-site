@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,">
 
     <link rel="icon" href="{{ asset('images/logo-light.svg') }}">
     <!-- CSRF Token -->
@@ -23,7 +23,7 @@
 <body>
     @yield('js-up')
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a href="{{ url('/') }}">
                     <div class="logo"></div>
@@ -78,9 +78,9 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
-        <main class="py-4 main-content">
+        <main class="main-content">
             @yield('content')
         </main>
     </div>
