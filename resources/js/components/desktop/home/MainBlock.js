@@ -77,6 +77,7 @@ const Container = styled.div`
       .description-container {
         margin-top: 20px;
         margin-left: 0;
+        width: 300px;
       }
       .action-buttons-container {
         justify-content: center;
