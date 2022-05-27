@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 60px;
 
   .portfolio-container {
     .img-container {
@@ -66,6 +67,7 @@ const Container = styled.div`
       flex-direction: column;
       align-items: center;
       text-align: center;
+      margin-top: 20px;
 
       .img-container {
         img {
@@ -101,7 +103,9 @@ const MainBlock = () => {
           Danny Chen
         </div>
         <div className="description">
-          Fusce tempor magna mi, non egestas velit ultricies nec. Aenean convallis, risus non condimentum gravida, odio mauris ullamcorper felis, ut venenatis purus ex eu mi. Quisque imperdiet lacinia urna, a placerat sapien pretium eu.
+          4 years experience in web development, including front-end, back-end, and a little bit of Devops.
+          Using php-Laravel, python-flask to develop backend, react-next, vue to develop frontend applications.
+          Have a little understanding of the operation process of CI/CD, and have used jenkins and droneCI to optimize the versioning process.
         </div>
         <div className="action-buttons-container">
           <div className="cv-download-button action-button">Download CV</div>

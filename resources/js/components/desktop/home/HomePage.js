@@ -19,10 +19,6 @@ const Container = styled.div`
       left: 0;
       top: 0;
     }
-
-    .main-block-wrapper {
-      margin-top: 60px;
-    }
 `;
 
 const HomePage = () => {
