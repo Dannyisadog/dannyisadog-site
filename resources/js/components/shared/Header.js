@@ -5,7 +5,11 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: 0 15px 0 0;
+
+    a {
+      text-decoration: none;
+    }
 
     .logo-wrapper {
       display: flex;
@@ -58,6 +62,9 @@ const Container = styled.div`
       .hamburger {
         display: flex;
       }
+      .logo-name {
+        display: none;
+      }
     }
   }
 
@@ -80,10 +87,12 @@ const Header = ({ setSideMenu }) => {
   return (
     <Container>
       <div className="container">
-        <div className="logo-wrapper">
-          <div className="logo"></div>
-          <div className="logo-name">Dannyisadog</div>
-        </div>
+        <a href="./">
+          <div className="logo-wrapper">
+            <div className="logo"></div>
+            <div className="logo-name">Dannyisadog</div>
+          </div>
+        </a>
         <div className="menu">
           <ul>
             <li>About Me</li>

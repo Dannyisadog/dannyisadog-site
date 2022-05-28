@@ -19,7 +19,8 @@ const Container = styled.div`
 
     @media screen and (max-width: 800px) {
       position: absolute;
-      padding-left: 0;
+      padding-top: 20px;
+      padding-left: 10px;
       padding-right: 10px;
       margin-top: 0;
       border-radius: 0;
