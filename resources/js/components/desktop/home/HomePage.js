@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styled from 'styled-components';
 
@@ -8,6 +8,8 @@ import About from "./About";
 import SideProject from "../../shared/SideProject";
 import SideMenu from '../../shared/SideMenu';
 import Footer from './Footer';
+
+import { lockScrollBody } from "../../../utility/helper";
 
 const Container = styled.div`
     padding: 40px 40px 100px 40px;
@@ -32,6 +34,10 @@ const Container = styled.div`
 
 const HomePage = () => {
   const [sideMenu, setSideMenu] = useState(false);
+
+  useEffect(() => {
+    lockScrollBody(sideMenu);
+  }, [sideMenu]);
 
   return (
     <Container sideMenu={sideMenu}>

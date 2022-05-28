@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import BlockTitle from "./BlockTitle";
+
 const Container = styled.div`
   position: fixed;
   display: none;
@@ -20,9 +22,7 @@ const Container = styled.div`
   }
 
   .item {
-    font-size: 1.2rem;
     margin-bottom: 30px;
-    border-bottom: 3px solid #007ced;
   }
 
   @media screen and (max-width: 800px) {
@@ -56,10 +56,18 @@ const SideMenu = ({ show, setShow }) => {
       <div className="close-icon" onClick={close}></div>
       <div className="blank-space" onClick={close} />
       <div className="menu">
-        <div className="item">About Me</div>
-        <div className="item">Resume</div>
-        <div className="item">Portfolio</div>
-        <div className="item">Contact</div>
+        <div className="item">
+          <BlockTitle title="About Me" />
+        </div>
+        <div className="item">
+          <BlockTitle title="Resume" />
+        </div>
+        <div className="item">
+          <BlockTitle title="Portfolio" />
+        </div>
+        <div className="item">
+          <BlockTitle title="Contact" />
+        </div>
       </div>
     </Container >
   );

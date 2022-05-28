@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Container = styled.div`
   .title {
     color: white;
-    font-size: 24px;
+    font-size: 1.4rem;
     width: fit-content;
     position: relative;
     font-weight: bold;
