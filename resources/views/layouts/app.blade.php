@@ -3,12 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,">
+    <meta name="description"  content="Dannyisadog, a full stack python developer introduction website" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dannyisadog's Web" />
+    <meta property="og:description" content="Dannyisadog, a full stack python developer introduction website" />
+    <meta property="og:url" content="https://dannyisadog.com" />
+    <meta property="og:site_name" content="Dannyisadog" />
+    <meta property="og:image" content="{{ asset('images/logo.svg') }}" />
 
     <link rel="icon" href="{{ asset('images/logo.svg') }}">
+    <link rel="canonical" href="https://www.dannyisadog.com">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dannyisadog</title>
+    <title>Dannyisadog's Web</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
