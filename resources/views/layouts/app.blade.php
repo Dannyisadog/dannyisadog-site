@@ -10,7 +10,7 @@
     <meta property="og:description" content="Dannyisadog, a full stack python developer introduction website" />
     <meta property="og:url" content="https://dannyisadog.com" />
     <meta property="og:site_name" content="Dannyisadog" />
-    <meta property="og:image" content="{{ asset('images/logo.svg') }}" />
+    <meta property="og:image" content="{{ asset('images/og-image.png') }}" />
 
     <link rel="icon" href="{{ asset('images/logo.svg') }}">
     <link rel="canonical" href="https://www.dannyisadog.com">
