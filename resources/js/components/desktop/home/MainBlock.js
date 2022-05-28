@@ -10,7 +10,7 @@ const Container = styled.div`
         img {
           width: 350px;
           height: 350px;
-          border: 12px solid #444;
+          border: 8px solid #555;
           border-radius: 100%;
       }
     }
