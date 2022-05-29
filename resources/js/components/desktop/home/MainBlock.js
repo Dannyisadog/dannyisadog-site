@@ -1,5 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { downloadCV } from "../../../api/home";
+import FullPageLoader from "../../shared/FullPageLoader";
 
 const Container = styled.div`
   display: flex;
@@ -99,8 +101,12 @@ const Container = styled.div`
 
 const MainBlock = () => {
 
+  const [loader, setLoader] = useState(false);
+
   const download = async () => {
+    setLoader(true);
     const resp = await downloadCV();
+    setLoader(false);
     const url = window.URL.createObjectURL(new Blob([resp.data]));
     const link = document.createElement('a');
     link.href = url;
@@ -133,6 +139,7 @@ const MainBlock = () => {
           <div className="contact-button action-button">Contact</div>
         </div>
       </div>
+      <FullPageLoader show={loader} />
     </Container>
   );
 }
