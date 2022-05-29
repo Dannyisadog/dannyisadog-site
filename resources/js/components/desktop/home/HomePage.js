@@ -43,7 +43,7 @@ const HomePage = () => {
     <Container sideMenu={sideMenu}>
       <Header setSideMenu={setSideMenu} />
       <MainBlock />
-      {/* <About /> */}
+      <About />
       <SideProject />
       <Footer />
       <SideMenu show={sideMenu} setShow={setSideMenu} />

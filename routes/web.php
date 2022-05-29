@@ -23,7 +23,8 @@ Route::post('/createTodoList', [App\Http\Controllers\TodoListController::class, 
 Route::post('/updateTodoItem', [App\Http\Controllers\TodoListController::class, 'updateTodoItem']);
 Route::post('/deleteTodoList', [App\Http\Controllers\TodoListController::class, 'deleteTodoList']);
 
-Auth::routes();
+// download CV
+Route::get('/downloadCV', [App\Http\Controllers\DownloadController::class, 'downloadCV']);
 
-// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// auth
+Auth::routes();
