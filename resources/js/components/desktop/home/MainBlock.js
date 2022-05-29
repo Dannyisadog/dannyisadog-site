@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { downloadCV } from "../../../api/home";
 import FullPageLoader from "../../shared/FullPageLoader";
+import { lockScrollBody } from "../../../utility/helper";
 
 const Container = styled.div`
   display: flex;
@@ -114,6 +115,10 @@ const MainBlock = () => {
     document.body.appendChild(link);
     link.click();
   }
+
+  useEffect(() => {
+    lockScrollBody(loader);
+  }, [loader]);
 
   return (
     <Container>
