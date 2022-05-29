@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { downloadCV } from "../../../api/home";
 
 const Container = styled.div`
   display: flex;
@@ -84,10 +85,30 @@ const Container = styled.div`
       .action-buttons-container {
         justify-content: center;
       }
+
+      .cv-download-button:hover {
+        color: white;
+        background: #333 !important;
+      }
+      .contact-button:hover {
+        color: white !important;
+        background: #333 !important;
+      }
     }
 `;
 
 const MainBlock = () => {
+
+  const download = async () => {
+    const resp = await downloadCV();
+    const url = window.URL.createObjectURL(new Blob([resp.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'cv.pdf'); //or any other extension
+    document.body.appendChild(link);
+    link.click();
+  }
+
   return (
     <Container>
       <div className="portfolio-container">
@@ -108,7 +129,7 @@ const MainBlock = () => {
           Have a little understanding of the operation process of CI/CD, and have used jenkins and droneCI to optimize the versioning process.
         </div>
         <div className="action-buttons-container">
-          <div className="cv-download-button action-button">Download CV</div>
+          <div className="cv-download-button action-button" onClick={download}>Download CV</div>
           <div className="contact-button action-button">Contact</div>
         </div>
       </div>
