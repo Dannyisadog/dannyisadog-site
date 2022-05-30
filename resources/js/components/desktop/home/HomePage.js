@@ -41,7 +41,7 @@ const HomePage = () => {
 
   return (
     <Container sideMenu={sideMenu}>
-      <Header setSideMenu={setSideMenu} />
+      <Header sideMenu={sideMenu} setSideMenu={setSideMenu} />
       <MainBlock />
       <About />
       <SideProject />
