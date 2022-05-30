@@ -49,13 +49,13 @@ const SideMenu = ({ show, setShow }) => {
       <div className="blank-space" onClick={close} />
       <div className="menu">
         <div className="item">
-          <BlockTitle title="About Me" />
+          <BlockTitle title="What I do" />
         </div>
         <div className="item">
-          <BlockTitle title="Resume" />
+          <BlockTitle title="Experience" />
         </div>
         <div className="item">
-          <BlockTitle title="Portfolio" />
+          <BlockTitle title="Side Projects" />
         </div>
         <div className="item">
           <BlockTitle title="Contact" />

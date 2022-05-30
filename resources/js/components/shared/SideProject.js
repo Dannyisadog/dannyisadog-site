@@ -3,7 +3,7 @@ import BlockTitle from "./BlockTitle";
 
 const Container = styled.div`
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
 `;
 
 const SideProject = () => {
