@@ -7,3 +7,13 @@ export const lockScrollBody = (lock) => {
     body.style.overflow = 'auto';
   }
 }
+
+export const scrollTo = (id) => {
+  const element = document.getElementById(id);
+
+  if (!element) return;
+
+  element.scrollIntoView({
+    behavior: "smooth"
+  });
+}

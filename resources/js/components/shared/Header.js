@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { scrollTo } from "../../utility/helper";
 
 const Container = styled.div`
   .container {
@@ -101,9 +102,11 @@ const Container = styled.div`
 `;
 
 const Header = ({ sideMenu, setSideMenu }) => {
+
   const toggle = () => {
     setSideMenu(!sideMenu);
   }
+
   return (
     <Container sideMenu={sideMenu}>
       <div className="container">
@@ -115,10 +118,10 @@ const Header = ({ sideMenu, setSideMenu }) => {
         </a>
         <div className="menu">
           <ul>
-            <li>What I do</li>
-            <li>Experience</li>
-            <li>Side Projects</li>
-            <li>Contact</li>
+            <li onClick={() => scrollTo("about")}>What I do</li>
+            <li onClick={() => scrollTo("experience")}>Experience</li>
+            <li onClick={() => scrollTo("side-project")}>Side Projects</li>
+            <li onClick={() => scrollTo("contact")}>Contact</li>
           </ul>
         </div>
         <div className="hamburger" onClick={toggle}>

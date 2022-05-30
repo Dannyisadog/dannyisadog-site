@@ -6,7 +6,7 @@
     <meta name="description"  content="Dannyisadog, a full stack python developer introduction website" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Dannyisadog's Web" />
+    <meta property="og:title" content="Dannyisadog" />
     <meta property="og:description" content="Dannyisadog, a full stack python developer introduction website" />
     <meta property="og:url" content="https://dannyisadog.com" />
     <meta property="og:site_name" content="Dannyisadog" />
@@ -17,7 +17,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dannyisadog's Web</title>
+    <title>Dannyisadog</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

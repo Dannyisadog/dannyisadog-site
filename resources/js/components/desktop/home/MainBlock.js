@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { downloadCV } from "../../../api/home";
 import FullPageLoader from "../../shared/FullPageLoader";
-import { lockScrollBody } from "../../../utility/helper";
+import { lockScrollBody, scrollTo } from "../../../utility/helper";
+
 
 const Container = styled.div`
   display: flex;
@@ -141,7 +142,7 @@ const MainBlock = () => {
         </div>
         <div className="action-buttons-container">
           <div className="cv-download-button action-button" onClick={download}>Download CV</div>
-          <div className="contact-button action-button">Contact</div>
+          <div className="contact-button action-button" onClick={() => scrollTo("contact")}>Contact</div>
         </div>
       </div>
       <FullPageLoader show={loader} />

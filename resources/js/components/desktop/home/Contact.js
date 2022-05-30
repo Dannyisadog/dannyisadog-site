@@ -8,7 +8,7 @@ const Container = styled.div`
 
 const Experience = () => {
   return (
-    <Container>
+    <Container id="contact">
       <BlockTitle title="Contact" />
     </Container>
   )
