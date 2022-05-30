@@ -115,9 +115,9 @@ const Header = ({ sideMenu, setSideMenu }) => {
         </a>
         <div className="menu">
           <ul>
-            <li>About Me</li>
-            <li>Resume</li>
-            <li>Portfolio</li>
+            <li>What I do</li>
+            <li>Experience</li>
+            <li>Side Projects</li>
             <li>Contact</li>
           </ul>
         </div>

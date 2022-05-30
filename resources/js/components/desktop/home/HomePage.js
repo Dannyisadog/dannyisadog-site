@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import Header from '../../shared/Header';
 import MainBlock from './MainBlock';
 import About from "./About";
+import Experience from "./Experience";
 import SideProject from "../../shared/SideProject";
+import Contact from "./Contact";
 import SideMenu from '../../shared/SideMenu';
 import Footer from './Footer';
 
@@ -44,6 +46,8 @@ const HomePage = () => {
       <Header sideMenu={sideMenu} setSideMenu={setSideMenu} />
       <MainBlock />
       <About />
+      <Experience />
+      <Contact />
       <SideProject />
       <Footer />
       <SideMenu show={sideMenu} setShow={setSideMenu} />
