@@ -61,6 +61,7 @@ const Container = styled.div`
       }
       .hamburger {
         display: flex;
+        z-index: 2;
       }
       .logo-name {
         display: none;
@@ -74,18 +75,37 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
     .line {
+      position: absolute;
       border-radius: 4px;
       width: 100%;
       height: 3px;
       background: #f0f0f0;
+      transition: 0.3s;
+    }
+
+    .line:nth-child(1) {
+      top: ${(props) => props.sideMenu ? "10px" : "0"};
+      transform: ${(props) => props.sideMenu ? "rotate(45deg)" : "0"};
+    }
+    .line:nth-child(2) {
+      top: 10px;
+      display: ${(props) => props.sideMenu ? "none" : "block"};
+    }
+    .line:nth-child(3) {
+      top: ${(props) => props.sideMenu ? "10px" : "20px"};
+      transform: ${(props) => props.sideMenu ? "rotate(-45deg)" : "0"};
     }
   }
 `;
 
-const Header = ({ setSideMenu }) => {
+const Header = ({ sideMenu, setSideMenu }) => {
+  const toggle = () => {
+    setSideMenu(!sideMenu);
+  }
   return (
-    <Container>
+    <Container sideMenu={sideMenu}>
       <div className="container">
         <a href="./">
           <div className="logo-wrapper">
@@ -101,7 +121,7 @@ const Header = ({ setSideMenu }) => {
             <li>Contact</li>
           </ul>
         </div>
-        <div className="hamburger" onClick={() => { setSideMenu(true) }}>
+        <div className="hamburger" onClick={toggle}>
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>

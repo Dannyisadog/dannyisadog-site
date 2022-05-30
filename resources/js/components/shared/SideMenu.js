@@ -13,13 +13,6 @@ const Container = styled.div`
   z-index: 1;
   transition: 0.5s;
   transform: ${(props) => props.show ? "translateX(0)" : "translateX(100%)"};
-  .close-icon {
-    position: absolute;
-    right: 20px;
-    top: 30px;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
 
   .item {
     margin-bottom: 30px;
@@ -53,7 +46,6 @@ const SideMenu = ({ show, setShow }) => {
   }
   return (
     <Container show={show}>
-      <div className="close-icon" onClick={close}></div>
       <div className="blank-space" onClick={close} />
       <div className="menu">
         <div className="item">
