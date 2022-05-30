@@ -8,7 +8,7 @@ const Container = styled.div`
 
 const SideProject = () => {
   return (
-    <Container>
+    <Container id="side-project">
       <BlockTitle title="Side Projects" />
     </Container>
   );

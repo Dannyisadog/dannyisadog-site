@@ -20,6 +20,7 @@ const Container = styled.div`
     position: relative;
     margin-top: 40px;
     overflow: ${(props) => props.sideMenu ? "hidden" : "auto"};
+    margin-bottom: 50px;
 
     @media screen and (max-width: 800px) {
       position: absolute;
@@ -47,8 +48,8 @@ const HomePage = () => {
       <MainBlock />
       <About />
       <Experience />
-      <Contact />
       <SideProject />
+      <Contact />
       <Footer />
       <SideMenu show={sideMenu} setShow={setSideMenu} />
     </Container>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import BlockTitle from "./BlockTitle";
+import { scrollTo } from "../../utility/helper";
 
 const Container = styled.div`
   position: fixed;
@@ -41,6 +42,10 @@ const Container = styled.div`
 `;
 
 const SideMenu = ({ show, setShow }) => {
+  const scroll = (id) => {
+    close();
+    scrollTo(id);
+  }
   const close = () => {
     setShow(false);
   }
@@ -48,16 +53,16 @@ const SideMenu = ({ show, setShow }) => {
     <Container show={show}>
       <div className="blank-space" onClick={close} />
       <div className="menu">
-        <div className="item">
+        <div className="item" onClick={() => scroll("about")}>
           <BlockTitle title="What I do" />
         </div>
-        <div className="item">
+        <div className="item" onClick={() => scroll("experience")}>
           <BlockTitle title="Experience" />
         </div>
-        <div className="item">
+        <div className="item" onClick={() => scroll("side-project")}>
           <BlockTitle title="Side Projects" />
         </div>
-        <div className="item">
+        <div className="item" onClick={() => scroll("contact")}>
           <BlockTitle title="Contact" />
         </div>
       </div>
