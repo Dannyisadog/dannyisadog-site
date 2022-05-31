@@ -8,6 +8,7 @@ import About from "./About";
 import Experience from "./Experience";
 import SideProject from "../../shared/SideProject";
 import Contact from "./Contact";
+import Course from "./Course";
 import SideMenu from '../../shared/SideMenu';
 import Footer from './Footer';
 
@@ -48,6 +49,7 @@ const HomePage = () => {
       <MainBlock />
       <About />
       <Experience />
+      <Course />
       <SideProject />
       {/* <Contact /> */}
       <Footer />

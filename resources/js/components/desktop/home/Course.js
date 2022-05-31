@@ -6,12 +6,12 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const Contact = () => {
+const Course = () => {
   return (
-    <Container id="contact">
-      <BlockTitle title="Contact" />
+    <Container id="course">
+      <BlockTitle title="Course" />
     </Container>
   )
 }
 
-export default Contact;
+export default Course;
