@@ -3,6 +3,10 @@ import styled from "styled-components";
 import BlockTitle from "./BlockTitle";
 import { scrollTo } from "../../utility/helper";
 
+import githubLogo from "@/image/shared/github.png";
+import linkedinLogo from "@/image/shared/linkedin.png";
+import instagramLogo from "@/image/shared/instagram.png"
+
 const Container = styled.div`
   position: fixed;
   display: none;
@@ -23,14 +27,22 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
 
-    .blank-space {
-
-    }
-
     .menu {
       padding: 5rem 1rem 2rem 1.5rem;
       background: #222;
       width: 20rem;
+      position: relative;
+
+      .menu-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        left: 0;
+        padding: 1.5rem 1.2rem;
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     .blank-space {
@@ -64,6 +76,17 @@ const SideMenu = ({ show, setShow }) => {
         </div>
         <div className="item" onClick={() => scroll("contact")}>
           <BlockTitle title="Contact" />
+        </div>
+        <div className="menu-footer">
+          <a href="https://github.com/Dannyisadog/">
+            <img src={githubLogo} alt="" height="100%" />
+          </a>
+          <a href="https://www.linkedin.com/in/zhong-yi-chen-78470b145/">
+            <img src={linkedinLogo} alt="" height="100%" />
+          </a>
+          <a href="https://www.instagram.com/dannyisadog/">
+            <img src={instagramLogo} alt="" height="100%" />
+          </a>
         </div>
       </div>
     </Container >
