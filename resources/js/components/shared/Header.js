@@ -92,7 +92,7 @@ const Container = styled.div`
     }
     .line:nth-child(2) {
       top: 10px;
-      display: ${(props) => props.sideMenu ? "none" : "block"};
+      opacity: ${(props) => props.sideMenu ? "0" : "1"};
     }
     .line:nth-child(3) {
       top: ${(props) => props.sideMenu ? "10px" : "20px"};
