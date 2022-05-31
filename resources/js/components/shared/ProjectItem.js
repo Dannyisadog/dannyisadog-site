@@ -43,7 +43,7 @@ const Container = styled.a`
 
 const ProjectItem = ({ title, link }) => {
   return (
-    <Container target="_blank" href={link}>
+    <Container href={link}>
       {title}
     </Container>
   );
