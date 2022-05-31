@@ -22,6 +22,8 @@ const Container = styled.a`
     transform: translateY(-10px);
     background-color: #007ced;
     border: 2px solid #007ced;
+    color: #d5d5d5;
+    text-decoration: none;
   }
   
   @media screen and (max-width: 800px) {
