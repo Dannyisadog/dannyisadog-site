@@ -20,6 +20,7 @@ const Container = styled.div`
     }
 
     .header {
+      width: fit-content;
       position: absolute;
       left: -20px;
       top: 10px;
