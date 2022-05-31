@@ -142,7 +142,7 @@ const MainBlock = () => {
         </div>
         <div className="action-buttons-container">
           <div className="cv-download-button action-button" onClick={download}>Download CV</div>
-          <div className="contact-button action-button" onClick={() => scrollTo("contact")}>Contact</div>
+          {/* <div className="contact-button action-button" onClick={() => scrollTo("contact")}>Contact</div> */}
         </div>
       </div>
       <FullPageLoader show={loader} />
