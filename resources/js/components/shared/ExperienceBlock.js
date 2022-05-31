@@ -25,6 +25,7 @@ const Container = styled.div`
       top: 10px;
       display: flex;
       align-items: center;
+      height: 20px;
       .duration {
         padding: 3px 15px;
         border: 2px solid #007ced;
@@ -36,27 +37,31 @@ const Container = styled.div`
         align-items: center;
         color: #d5d5d5;
       }
+      .company-logo {
+        margin-left: 0.8rem;
+      }
       .company {
-        margin-left: 1rem;
-        font-size: 1.2rem;
+        margin-left: 0.8rem;
+        font-size: 1rem;
         color: #aaa;
       }
     }
     .content {
       .job-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: bold;
       }
     }
   }
 `;
 
-const ExperienceBlock = ({ company, jobTitle, start, end, title, content }) => {
+const ExperienceBlock = ({ company, jobTitle, start, end, title, content, icon }) => {
   return (
     <Container>
       <div className="experience-block">
         <div className="header">
           <div className="duration">{start} - {end || 'Current'}</div>
+          {icon && <img className="company-logo" src={icon} height="100%" />}
           <div className="company">{company}</div>
         </div>
         <div className="content">
