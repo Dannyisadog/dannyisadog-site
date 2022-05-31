@@ -9,6 +9,10 @@
 
 $dark-background-color: #007ced;
 
+a, a:hover {
+  color: #d5d5d5;
+  text-decoration: none;
+}
 body {
     background: $dark-background-color;
 
