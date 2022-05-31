@@ -49,7 +49,7 @@ const HomePage = () => {
       <About />
       <Experience />
       <SideProject />
-      <Contact />
+      {/* <Contact /> */}
       <Footer />
       <SideMenu show={sideMenu} setShow={setSideMenu} />
     </Container>

@@ -59,9 +59,9 @@ const SideMenu = ({ show, setShow }) => {
         <div className="item" onClick={() => scroll("side-project")}>
           <BlockTitle title="Side Projects" />
         </div>
-        <div className="item" onClick={() => scroll("contact")}>
+        {/* <div className="item" onClick={() => scroll("contact")}>
           <BlockTitle title="Contact" />
-        </div>
+        </div> */}
       </div>
     </Container >
   );
