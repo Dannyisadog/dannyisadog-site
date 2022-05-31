@@ -91,12 +91,12 @@ const Container = styled.div`
       transform: ${(props) => props.sideMenu ? "rotate(45deg)" : "0"};
     }
     .line:nth-child(2) {
-      top: 10px;
-      opacity: ${(props) => props.sideMenu ? "0" : "1"};
+      top: ${(props) => props.sideMenu ? "10px" : "10px"};
+      transform: ${(props) => props.sideMenu ? "rotate(-45deg)" : "0"};
     }
     .line:nth-child(3) {
-      top: ${(props) => props.sideMenu ? "10px" : "20px"};
-      transform: ${(props) => props.sideMenu ? "rotate(-45deg)" : "0"};
+      top: ${(props) => props.sideMenu ? "50px" : "20px"};
+      opacity: ${(props) => props.sideMenu ? "0" : "1"};
     }
   }
 `;
