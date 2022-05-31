@@ -54,6 +54,8 @@ const Container = styled.div`
 
     .hamburger {
       display: none;
+      position: fixed;
+      right: 20px;
     }
 
     @media screen and (max-width: 800px) {
