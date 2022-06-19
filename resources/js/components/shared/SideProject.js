@@ -28,6 +28,7 @@ const SideProject = () => {
         <ProjectItem title="TTUMC" link="https://ttumc.dannyisadog.com/schedule" />
         <ProjectItem title="CyberGoblin" link="https://cybergoblin.club" />
         <ProjectItem title="TodoList" link="https://svelte-todolist.dannyisadog.com/" />
+        <ProjectItem title="F2E Tutorial" link="https://frontend-tutorial.dannyisadog.com/" />
       </div>
     </Container>
   );
