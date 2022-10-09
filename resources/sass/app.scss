@@ -90,4 +90,17 @@ body {
       width: 50%;
       background-size: cover;
     }
+
+    .card {
+      border: 0;
+      color: white;
+    }
+
+    .card-header.dark {
+      background-color: #333;
+    }
+
+    .card-body.dark {
+      background-color: #222;
+    }
 }

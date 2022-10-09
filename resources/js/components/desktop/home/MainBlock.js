@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { downloadCV } from "../../../api/home";
+import { lockScrollBody } from "../../../utility/helper";
 import FullPageLoader from "../../shared/FullPageLoader";
-import { lockScrollBody, scrollTo } from "../../../utility/helper";
 
 
 const Container = styled.div`
@@ -125,7 +125,7 @@ const MainBlock = () => {
     <Container>
       <div className="portfolio-container">
         <div className="img-container">
-          <img src="/images/danny-image.jpg" width="100%" />
+          <img src="/images/profile-virtual-img.png" width="100%" />
         </div>
       </div>
       <div className="description-container">
@@ -137,12 +137,11 @@ const MainBlock = () => {
         </div>
         <div className="description">
           4 years experience in web development, including front-end, back-end, and a little bit of Devops.
-          Using php-Laravel, python-flask to develop backend, react-next, vue to develop frontend applications.
+          Using php-Laravel, python-fastapi to develop backend, react-next, vue to develop frontend applications.
           Have a little understanding of the operation process of CI/CD, and have used jenkins and droneCI to optimize the versioning process.
         </div>
         <div className="action-buttons-container">
           <div className="cv-download-button action-button" onClick={download}>Download CV</div>
-          {/* <div className="contact-button action-button" onClick={() => scrollTo("contact")}>Contact</div> */}
         </div>
       </div>
       <FullPageLoader show={loader} />

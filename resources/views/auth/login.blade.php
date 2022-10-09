@@ -3,11 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 mt-5">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header dark d-flex justify-content-between">
+                    <div>{{ __('Login') }}</div>
+                    <a href="/register">Register</a>
+                </div>
 
-                <div class="card-body">
+                <div class="card-body dark">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

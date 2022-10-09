@@ -33,7 +33,7 @@ const Container = styled.div`
       display: flex;
       align-items: center;
       ul {
-        width: 400px;
+        width: 300px;
         font-size: 16px;
         margin-bottom: 0;
         display: flex;
@@ -45,10 +45,23 @@ const Container = styled.div`
         cursor: pointer;
         color: #9f9f9f;
         transition: 0.3s;
+
+        .bottom-line {
+          height: 2px;
+          width: 0;
+          background: white;
+          transition: 0.3s;
+          border-radius: 4px;
+        }
       }
 
       li:hover {
         color: white;
+        transform: translateY(-5px);
+
+        .bottom-line {
+          width: 100%;
+        }
       }
     }
 
@@ -120,10 +133,18 @@ const Header = ({ sideMenu, setSideMenu }) => {
         </a>
         <div className="menu">
           <ul>
-            <li onClick={() => scrollTo("about")}>What I do</li>
-            <li onClick={() => scrollTo("experience")}>Experience</li>
-            <li onClick={() => scrollTo("side-project")}>Side Projects</li>
-            <li onClick={() => scrollTo("contact")}>Contact</li>
+            <li onClick={() => scrollTo("experience")}>
+              <span>Experience</span>
+              <div className="bottom-line" />
+            </li>
+            <li onClick={() => scrollTo("course")}>
+              <span>Course</span>
+              <div className="bottom-line" />
+            </li>
+            <li onClick={() => scrollTo("side-project")}>
+              <span>Side Projects</span>
+              <div className="bottom-line" />
+            </li>
           </ul>
         </div>
         <div className="hamburger" onClick={toggle}>

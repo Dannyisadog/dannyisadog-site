@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { createTodoList, updateTodoItem, deleteTodoList } from '../../../api';
 import $ from 'jquery';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import styled from 'styled-components';
+import { createTodoList, deleteTodoList, updateTodoItem } from '../../../api';
 
 const Container = styled.div`
     width: 200px;
@@ -13,7 +13,6 @@ const Container = styled.div`
     padding: 20px;
     color: white;
     position: relative;
-    box-shadow: 1px 1px 8px #eee;
     
     .title {
         font-size: 16px;
