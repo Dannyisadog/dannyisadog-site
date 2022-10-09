@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Background from "../../shared/Background";
+import Loader from '../../shared/Loader';
 import PrevPage from '../../shared/PrevPage';
 
 const Container = styled.div`
@@ -70,6 +71,7 @@ const CoursePage = () => {
     email: "",
     github_link: ""
   });
+  const [showLoader, setShowLoader] = useState(false);
 
   const dataHandler = (e, type) => {
     const new_value = e.target.value;
@@ -96,12 +98,15 @@ const CoursePage = () => {
   }
 
   async function getUserData() {
+    setShowLoader(true);
     let response = await fetch('/getUserData');
     response = await response.json();
     setUserData(response);
+    setShowLoader(false);
   };
 
   async function updateUserData() {
+    setShowLoader(true);
     const token = $('meta[name="csrf-token"]').attr('content');
 
     const headers = {
@@ -115,6 +120,7 @@ const CoursePage = () => {
       headers,
     }).then(res => res);
     response = await response.json();
+    setShowLoader(false);
     if (response.success) {
       alert("update successfully !");
     }
@@ -157,6 +163,7 @@ const CoursePage = () => {
           <Button className="update-button" variant="contained" onClick={update}>Update</Button>
         </div>
       </Container>
+      <Loader show={showLoader} />
     </Background>
   );
 }
