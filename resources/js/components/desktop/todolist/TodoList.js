@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import TodoItem from './TodoItem';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { fetchTodoList } from '../../../api';
 import FullPageLoader from '../../shared/FullPageLoader';
+import TodoItem from './TodoItem';
 
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
+    padding: 20px;
     .item {
         margin-left: 60px;
         margin-bottom: 20px;

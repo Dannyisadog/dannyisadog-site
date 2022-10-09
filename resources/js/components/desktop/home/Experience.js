@@ -1,12 +1,12 @@
-import styled from "styled-components";
 import BlockTitle from "@Components/shared/BlockTitle";
+import styled from "styled-components";
 
-import ExperienceBlock from "@Components/shared/ExperienceBlock";
-import trendMicroLogo from "@/image/shared/trend-micro.png";
 import jarvishLogo from "@/image/shared/jarvish.png";
-import pconeLogo from "@/image/shared/pcone.png";
-import mayoLogo from "@/image/shared/mayo.png";
 import kkCompanyLogo from "@/image/shared/kkcompany.png";
+import mayoLogo from "@/image/shared/mayo.png";
+import pconeLogo from "@/image/shared/pcone.png";
+import trendMicroLogo from "@/image/shared/trend-micro.png";
+import ExperienceBlock from "@Components/shared/ExperienceBlock";
 
 const Container = styled.div`
   margin-top: 20px;
