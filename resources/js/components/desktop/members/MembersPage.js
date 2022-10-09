@@ -7,6 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Background from "../../shared/Background";
+import Loader from '../../shared/Loader';
 import PrevPage from '../../shared/PrevPage';
 
 const Container = styled.div`
@@ -68,11 +69,14 @@ const Container = styled.div`
 
 const CoursePage = () => {
   const [members, setMembers] = useState([]);
+  const [showLoader, setShowLoader] = useState(false);
 
   const getMembers = async () => {
+    setShowLoader(true);
     let response = await fetch("/getMembers").then(res => res);
     response = await response.json();
     setMembers(response);
+    setShowLoader(false);
   }
 
   useEffect(() => {
@@ -117,6 +121,7 @@ const CoursePage = () => {
           </TableContainer>
         </div>
       </Container>
+      <Loader show={showLoader} />
     </Background>
   );
 }
