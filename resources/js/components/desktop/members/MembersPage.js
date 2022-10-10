@@ -31,7 +31,7 @@ const Container = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
 
     .input {
       margin-bottom: 20px;
