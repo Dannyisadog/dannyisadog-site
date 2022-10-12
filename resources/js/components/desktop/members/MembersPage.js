@@ -31,7 +31,7 @@ const Container = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
 
     .input {
       margin-bottom: 20px;
@@ -64,6 +64,17 @@ const Container = styled.div`
       flex-direction: column;
       margin-top: 30px;
     }
+
+    .short-name-col, .order-id {
+      display: none;
+    }
+
+    a {
+      overflow:hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
   }
 `;
 
@@ -93,13 +104,13 @@ const CoursePage = () => {
           <h1 className="title">Members</h1>
         </div>
         <div className="content">
-          <TableContainer>
-            <Table sx={{ minWidth: 1000 }} aria-label="simple table">
+          <TableContainer sx={{ overflow: 'hidden' }}>
+            <Table sx={{ width: '100%' }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ color: 'white' }}>#</TableCell>
+                  <TableCell className="order-id" style={{ color: 'white' }}>#</TableCell>
                   <TableCell style={{ color: 'white' }}>Name</TableCell>
-                  <TableCell style={{ color: 'white' }}>Short Name</TableCell>
+                  <TableCell className="short-name-col" style={{ color: 'white' }}>Short Name</TableCell>
                   <TableCell style={{ color: 'white' }}>Github Link</TableCell>
                 </TableRow>
               </TableHead>
@@ -108,10 +119,10 @@ const CoursePage = () => {
                   <TableRow
                     key={index}
                   >
-                    <TableCell style={{ color: 'white' }}>{index + 1}</TableCell>
+                    <TableCell className="order-id" style={{ color: 'white' }}>{index + 1}</TableCell>
                     <TableCell style={{ color: 'white' }}>{member.name}</TableCell>
-                    <TableCell style={{ color: 'white' }}>{member.short_name}</TableCell>
-                    <TableCell style={{ color: 'white' }}>
+                    <TableCell className="short-name-col" style={{ color: 'white' }}>{member.short_name}</TableCell>
+                    <TableCell className="link-wrapper" style={{ color: 'white' }}>
                       <a href={member.github_link} target="_blank">{member.github_link}</a>
                     </TableCell>
                   </TableRow>
