@@ -44,6 +44,10 @@ const Container = styled.div`
       flex-direction: column;
       margin-top: 30px;
     }
+
+    .member-link:first-child {
+      margin-left: 0px;
+    }
   }
 `;
 
