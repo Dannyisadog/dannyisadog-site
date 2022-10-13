@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import 'semantic-ui-css/semantic.min.css';
 import { Table } from 'semantic-ui-react';
 import styled from "styled-components";
 import Background from "../../shared/Background";
 import Loader from '../../shared/Loader';
 import PrevPage from '../../shared/PrevPage';
+// import 'semantic-ui-css/semantic.min.css';
 
 const Container = styled.div`
   h1 {
