@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import 'semantic-ui-css/semantic.min.css';
 import { Table } from 'semantic-ui-react';
 import styled from "styled-components";
 import Background from "../../shared/Background";
 import Loader from '../../shared/Loader';
 import PrevPage from '../../shared/PrevPage';
-// import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css';
 
 const Container = styled.div`
   h1 {
@@ -14,7 +13,7 @@ const Container = styled.div`
 
   a {
     text-decoration: underline !important;
-    color: white !important;
+    color: #222 !important;
   }
 
   display: flex;
@@ -99,13 +98,13 @@ const CoursePage = () => {
           <h1 className="title">Members</h1>
         </div>
         <div className="content">
-          <Table inverted color="#222">
-            <Table.Header >
+          <Table color="#222">
+            <Table.Header>
               <Table.Row>
-                <Table.HeaderCell className="order-id" style={{ color: 'white' }}>#</Table.HeaderCell>
-                <Table.HeaderCell style={{ color: 'white' }}>Name</Table.HeaderCell>
-                <Table.HeaderCell className="short-name-col" style={{ color: 'white' }}>Short Name</Table.HeaderCell>
-                <Table.HeaderCell style={{ color: 'white' }}>Github Link</Table.HeaderCell>
+                <Table.HeaderCell className="order-id">#</Table.HeaderCell>
+                <Table.HeaderCell>Name</Table.HeaderCell>
+                <Table.HeaderCell className="short-name-col">Short Name</Table.HeaderCell>
+                <Table.HeaderCell>Github Link</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -113,10 +112,10 @@ const CoursePage = () => {
                 <Table.Row
                   key={index}
                 >
-                  <Table.Cell className="order-id" style={{ color: 'white' }}>{index + 1}</Table.Cell>
-                  <Table.Cell style={{ color: 'white' }}>{member.name}</Table.Cell>
-                  <Table.Cell className="short-name-col" style={{ color: 'white' }}>{member.short_name}</Table.Cell>
-                  <Table.Cell className="link-wrapper" style={{ color: 'white' }}>
+                  <Table.Cell className="order-id">{index + 1}</Table.Cell>
+                  <Table.Cell>{member.name}</Table.Cell>
+                  <Table.Cell className="short-name-col">{member.short_name}</Table.Cell>
+                  <Table.Cell className="link-wrapper">
                     <a href={member.github_link} target="_blank">{member.github_link}</a>
                   </Table.Cell>
                 </Table.Row>

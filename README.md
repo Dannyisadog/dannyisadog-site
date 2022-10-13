@@ -1,3 +1,3 @@
-## About my site projects
+## About my side projects
 
-[Dannyisadog site projects](https://sp.dannyisadog.com).
+[Dannyisadog side projects](https://sp.dannyisadog.com).
