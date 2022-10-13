@@ -1,10 +1,5 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import { useEffect, useState } from "react";
+import { Table } from 'semantic-ui-react';
 import styled from "styled-components";
 import Background from "../../shared/Background";
 import Loader from '../../shared/Loader';
@@ -13,6 +8,11 @@ import PrevPage from '../../shared/PrevPage';
 const Container = styled.div`
   h1 {
     color: white;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: white !important;
   }
 
   display: flex;
@@ -68,13 +68,6 @@ const Container = styled.div`
     .short-name-col, .order-id {
       display: none;
     }
-
-    a {
-      overflow:hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
   }
 `;
 
@@ -104,32 +97,30 @@ const CoursePage = () => {
           <h1 className="title">Members</h1>
         </div>
         <div className="content">
-          <TableContainer sx={{ overflow: 'hidden' }}>
-            <Table sx={{ width: '100%' }} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell className="order-id" style={{ color: 'white' }}>#</TableCell>
-                  <TableCell style={{ color: 'white' }}>Name</TableCell>
-                  <TableCell className="short-name-col" style={{ color: 'white' }}>Short Name</TableCell>
-                  <TableCell style={{ color: 'white' }}>Github Link</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {members.map((member, index) => (
-                  <TableRow
-                    key={index}
-                  >
-                    <TableCell className="order-id" style={{ color: 'white' }}>{index + 1}</TableCell>
-                    <TableCell style={{ color: 'white' }}>{member.name}</TableCell>
-                    <TableCell className="short-name-col" style={{ color: 'white' }}>{member.short_name}</TableCell>
-                    <TableCell className="link-wrapper" style={{ color: 'white' }}>
-                      <a href={member.github_link} target="_blank">{member.github_link}</a>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+          <Table inverted color="#222">
+            <Table.Header >
+              <Table.Row>
+                <Table.HeaderCell className="order-id" style={{ color: 'white' }}>#</Table.HeaderCell>
+                <Table.HeaderCell style={{ color: 'white' }}>Name</Table.HeaderCell>
+                <Table.HeaderCell className="short-name-col" style={{ color: 'white' }}>Short Name</Table.HeaderCell>
+                <Table.HeaderCell style={{ color: 'white' }}>Github Link</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {members.map((member, index) => (
+                <Table.Row
+                  key={index}
+                >
+                  <Table.Cell className="order-id" style={{ color: 'white' }}>{index + 1}</Table.Cell>
+                  <Table.Cell style={{ color: 'white' }}>{member.name}</Table.Cell>
+                  <Table.Cell className="short-name-col" style={{ color: 'white' }}>{member.short_name}</Table.Cell>
+                  <Table.Cell className="link-wrapper" style={{ color: 'white' }}>
+                    <a href={member.github_link} target="_blank">{member.github_link}</a>
+                  </Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
         </div>
       </Container>
       <Loader show={showLoader} />

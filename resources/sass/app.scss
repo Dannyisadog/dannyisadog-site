@@ -14,7 +14,7 @@ a, a:hover {
   text-decoration: none;
 }
 body {
-    background: $dark-background-color;
+    background: $dark-background-color !important;
 
     .container {
         max-width: 1320px !important;
