@@ -39,3 +39,12 @@ Route::get('/course/members', [App\Http\Controllers\UserController::class, 'memb
 // auth
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+// assignment
+Route::get('/course/assignment', [App\Http\Controllers\AssignmentController::class, 'index']);
+Route::get('/course/assignmentContent', [App\Http\Controllers\AssignmentController::class, 'assignmentContent']);
+Route::post('/course/assignment', [App\Http\Controllers\AssignmentController::class, 'create']);
+Route::get('/course/assignmentList', [App\Http\Controllers\AssignmentController::class, 'fetchAssignmentList']);
+Route::get('/course/assignment/{id}', [App\Http\Controllers\AssignmentController::class, 'getAssignmentContent']);
+Route::post('/course/submitAssignment', [App\Http\Controllers\AssignmentController::class, 'submitAssignment']);
+Route::put('/course/updateAssignment', [App\Http\Controllers\AssignmentController::class, 'updateAssignment']);
