@@ -32,7 +32,9 @@ class UserController extends BaseController
             'name' => $user->name,
             'email' => $user->email,
             'github_link' => $user->github_link,
-            'short_name' => $user->short_name
+            'short_name' => $user->short_name,
+            'is_admin' => $user->is_admin,
+            'user_id' => $user->id
         ];
 
         echo json_encode($data);

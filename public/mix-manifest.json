@@ -5,5 +5,7 @@
     "/js/course.js": "/js/course.js",
     "/js/user.js": "/js/user.js",
     "/js/members.js": "/js/members.js",
+    "/js/assignment.js": "/js/assignment.js",
+    "/js/assignmentContent.js": "/js/assignmentContent.js",
     "/css/app.css": "/css/app.css"
 }

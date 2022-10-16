@@ -58,6 +58,7 @@ const CoursePage = () => {
         <div className="title-wrapper">
           <h1 className="title">Frontend Course</h1>
           <div className="right">
+            <a href="/course/assignment" className="member-link">assignment</a>
             <a href="/course/members" className="member-link">members</a>
             <a href="/user" className="member-link">profile</a>
           </div>

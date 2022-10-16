@@ -16,6 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
   .js('resources/js/course.js', 'public/js')
   .js('resources/js/user.js', 'public/js')
   .js('resources/js/members.js', 'public/js')
+  .js('resources/js/assignment.js', 'public/js')
+  .js('resources/js/assignmentContent.js', 'public/js')
   .react()
   .sass('resources/sass/app.scss', 'public/css')
   .webpackConfig({

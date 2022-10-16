@@ -2,6 +2,7 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import styled from "styled-components";
 
 const Container = styled.div`
+  cursor: pointer;
   .backIcon {
     color: ${(props) => props.color ?? 'white'};
   }
