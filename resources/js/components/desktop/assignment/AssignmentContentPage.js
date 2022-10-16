@@ -13,6 +13,7 @@ import { Table } from 'semantic-ui-react';
 import EditIcon from '@mui/icons-material/Edit';
 import 'semantic-ui-css/semantic.min.css';
 import { fetchUser } from "@/js/api/global";
+import Loader from '../../shared/Loader';
 
 
 const Container = styled.div`
@@ -125,6 +126,7 @@ const AssignmentPage = () => {
   const [userData, setUserData] = useState({});
   const [editable, setEditable] = useState(false);
   const [newLink, setNewLink] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const openModal = () => {
     setShowModal(true);
@@ -138,13 +140,15 @@ const AssignmentPage = () => {
       id,
       link
     }
-
+    setLoader(true);
     await submitAssignment(data);
     await getContentData();
     closeModal();
+    setLoader(false);
   }
 
   const update = async () => {
+    setLoader(true);
     const data = {
       id,
       newLink
@@ -152,13 +156,15 @@ const AssignmentPage = () => {
 
     await updateAssignment(data);
     await getContentData();
-
+    setLoader(false);
     setEditable(false);
   }
 
   const getUserData = async () => {
+    setLoader(true);
     const resp = await fetchUser();
     setUserData(resp.data);
+    setLoader(false);
   }
 
   useEffect(() => {
@@ -169,8 +175,10 @@ const AssignmentPage = () => {
   }, []);
 
   const getContentData = async () => {
+    setLoader(true);
     let resp = await fetchAssignmentContent(id);
     setAssignmentContent(resp.data);
+    setLoader(false);
   }
 
   useEffect(() => {
@@ -276,6 +284,7 @@ const AssignmentPage = () => {
           </Button>
         </Box>
       </Modal>
+      <Loader show={loader} />
     </Background >
   );
 }

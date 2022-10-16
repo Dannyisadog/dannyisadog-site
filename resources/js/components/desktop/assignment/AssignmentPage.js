@@ -11,6 +11,7 @@ import { fetchAssignmentList } from "@/js/api/assignment";
 import AssignmentCard from "./AssignmentCard";
 import { fetchUser } from "@/js/api/global";
 import PrevPage from "../../shared/PrevPage";
+import Loader from '../../shared/Loader';
 
 const Container = styled.div`
 
@@ -77,6 +78,7 @@ const AssignmentPage = () => {
   const [description, setDescription] = useState("");
   const [disableCreate, setDisableCreate] = useState(true);
   const [assignmentList, setAssignmentList] = useState([]);
+  const [loader, setLoader] = useState(false);
   const openModal = () => {
     setShowModal(true);
   }
@@ -100,9 +102,11 @@ const AssignmentPage = () => {
   const getUser = async () => {
     const resp = await fetchUser();
     setUserData(resp.data);
+    setLoader(false);
   }
 
   useEffect(() => {
+    setLoader(true);
     getList();
     getUser();
   }, []);
@@ -173,6 +177,7 @@ const AssignmentPage = () => {
           </Button>
         </Box>
       </Modal>
+      <Loader show={loader} />
     </Background >
   );
 }
