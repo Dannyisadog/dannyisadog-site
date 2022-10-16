@@ -132,9 +132,9 @@ const AssignmentPage = () => {
         <div className="title-wrapper">
           <PrevPage />
           <h1>Assignment</h1>
-          {userData.is_admin && <div className="create-button-wrapper">
-            <button onClick={openModal}><AddIcon /></button>
-          </div>}
+          <div className="create-button-wrapper">
+            {userData.is_admin && <button onClick={openModal}><AddIcon /></button>}
+          </div>
         </div>
         <div className="content">
           {
