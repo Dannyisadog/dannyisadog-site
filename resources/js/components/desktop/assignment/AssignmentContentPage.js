@@ -249,10 +249,10 @@ const AssignmentPage = () => {
                               </div>
                               : <>
                                 <a href={item.link} target="_blank">{item.link}</a>
-                                {/* {userData.user_id == item.user_id && <EditIcon onClick={() => {
+                                {userData.user_id == item.user_id && <EditIcon onClick={() => {
                                   setNewLink(item.link);
                                   setEditable(true);
-                                }} className="edit-icon" />} */}
+                                }} className="edit-icon" />}
                               </>
                           }
                         </div>

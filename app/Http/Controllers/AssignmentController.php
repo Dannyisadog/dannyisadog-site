@@ -106,7 +106,7 @@ class AssignmentController extends BaseController
             foreach ($assignments as $item) {
                 $list_item = [
                     "id" => $item->id,
-                    "user_id" => $user->id,
+                    "user_id" => $item->user_id,
                     "link" => $item->link,
                     "name" => $item->name
                 ];
