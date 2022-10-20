@@ -233,11 +233,21 @@ const AssignmentPage = () => {
                       <Table.Cell className="link-wrapper item-cell">
                         <div className="cell-wrapper link-cell-wrapper">
                           {
-                            editable
+                            editable && userData.user_id === item.user_id
                               ? <div className="edit-input">
                                 <TextField fullWidth size="small" label="New Link" variant="outlined" value={newLink} onChange={(e) => {
                                   setNewLink(e.target.value);
                                 }} />
+                                <Button
+                                  className="cancel-button"
+                                  variant="text"
+                                  disabled={!newLink}
+                                  onClick={() => {
+                                    setEditable(false)
+                                  }}
+                                >
+                                  Cancel
+                                </Button>
                                 <Button
                                   className="update-button"
                                   variant="contained"
