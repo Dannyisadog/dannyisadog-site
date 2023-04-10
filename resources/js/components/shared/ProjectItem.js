@@ -13,6 +13,7 @@ const Container = styled.a`
   align-items: center;
   font-size: 2.3rem;
   margin-right: 20px;
+  z-index: 9999;
   cursor: pointer;
   transition: 0.3s;
   :last-child {
@@ -43,7 +44,7 @@ const Container = styled.a`
 
 const ProjectItem = ({ title, link }) => {
   return (
-    <Container href={link}>
+    <Container target="_blank" href={link}>
       {title}
     </Container>
   );

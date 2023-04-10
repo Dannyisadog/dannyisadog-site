@@ -50,9 +50,9 @@ const SideMenu = ({ show, setShow }) => {
     <Container show={show}>
       <div className="blank-space" onClick={close} />
       <div className="menu">
-        <div className="item" onClick={() => scroll("about")}>
+        {/* <div className="item" onClick={() => scroll("about")}>
           <BlockTitle title="What I do" />
-        </div>
+        </div> */}
         <div className="item" onClick={() => scroll("experience")}>
           <BlockTitle title="Experience" />
         </div>
@@ -60,7 +60,7 @@ const SideMenu = ({ show, setShow }) => {
           <BlockTitle title="Course" />
         </div>
         <div className="item" onClick={() => scroll("side-project")}>
-          <BlockTitle title="Side Projects" />
+          <BlockTitle title="Gallery" />
         </div>
         {/* <div className="item" onClick={() => scroll("contact")}>
           <BlockTitle title="Contact" />
